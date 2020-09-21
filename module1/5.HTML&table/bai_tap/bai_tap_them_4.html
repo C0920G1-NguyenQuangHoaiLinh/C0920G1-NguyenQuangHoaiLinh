@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+        form {
+            background-color: sandybrown ;
+            height: 430px;
+            width: 50%;
+        }
+        label {
+            padding-left: 10px;
+        }
+        input {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h1 style="background-color: darksalmon">ĐĂNG KÝ HỌC VIÊN</h1>
+    <label>Họ và tên <input style="margin-left: 9px" type="text" name="name"></label><br><br>
+    <label>Ngày sinh <input style="margin-left: 5px" type="text" name="brithday"></label><br><br>
+    <label>Giới tính
+        <input style="margin-left: 10px" type="radio" name="gender" value="male">Nam
+        <input type="radio" name="gender" value="female">Nữ</label><br><br>
+    <label>Địa chỉ <textarea style="margin-left: 20px" rows="5" cols="30"></textarea></label><br><br>
+    <label>Lớp
+        <select style="margin-left: 42px">
+        <option value="java"> Java
+        <option value="ruby"> Ruby
+        </select></label><br><br>
+    <label>Email <input style="margin-left: 30px" type="email" name="email"></label><br><br>
+    <label>Điện thoại <input type="number" name="phone"></label><br><br>
+    <input style="margin-left: 100px" type="submit" value="Đăng ký">
+    <input type="reset" value="Nhập lại">
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: #dddddd;
+        }
+        th, td {
+            padding: 10px;
+        }
+        caption {
+            font-style: italic;
+            font-size: 20px;
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<table width="30%">
+    <caption>A test table with merged cells</caption>
+    <tr>
+        <th rowspan="2"></th>
+        <th colspan="2">Avenger</th>
+        <th rowspan="2">Red eyes</th>
+    </tr>
+    <tr style="font-weight: bold">
+        <td>height</td>
+        <td>weight</td>
+    </tr>
+    <tr>
+        <td style="font-weight: bold">Males</td>
+        <td>1.9</td>
+        <td>0.003</td>
+        <td>40%</td>
+    </tr>
+    <tr>
+        <td style="font-weight: bold">Females</td>
+        <td>1.7</td>
+        <td>0.002</td>
+        <td>43%</td>
+    </tr>
+</table>
+</body>
+</html>
