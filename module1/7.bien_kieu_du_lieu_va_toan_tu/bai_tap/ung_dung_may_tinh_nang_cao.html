@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>máy tính</title>
+    <style>
+        .bt {
+            background: cadetblue;
+            border-color: black;
+            height: 40px;
+            width: 80px;
+        }
+        .bt:hover{
+            background: dodgerblue;
+        }
+    </style>
+    ​
+</head>
+<body>
+<!--để dành nghiên cứu, giờ xem chưa hiểu :((( -->
+<!--để dành nghiên cứu, giờ xem chưa hiểu :((( -->
+<!--để dành nghiên cứu, giờ xem chưa hiểu :((( -->
+<!--để dành nghiên cứu, giờ xem chưa hiểu :((( -->
+<!--để dành nghiên cứu, giờ xem chưa hiểu :((( -->
+<!--<form style=" margin:50px; height: 500px; background: lightcyan; border-width: 1px; border-color: black; border-style: solid;">-->
+<div style="height: 285px; width:600px; background: white;border-width: 1px; margin-left: 350px; ">
+    <div style="height: 50px; text-align: right; background: white;border-width: 1px;">
+        <span  id="ketquatruoc" ;style="text-align: right;"></span> <br>
+        <span id="ketqua"; style="text-align: right; font-size: 200%"></span>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th rowspan="7"><input style="width: 590px; height: 60px; font-size: xx-large" type="number" id="display"></th>
+            </tr>
+        </table>
+        <table style=" height: 235px; width: 255px; background: white; border-width: 1px; border-style: solid; float: left; ">
+            <tbody>
+            <tr>
+                <td><button class="bt"> Rad </button></td>
+                <td><button class="bt"> Deg </button></td>
+                <td><button class="bt"> x! </button></td>
+            </tr>
+            <tr>
+                <td><button class="bt"> lnv </button></td>
+                <td><button class="bt"> sin </button></td>
+                <td><button class="bt"> ln </button></td>
+            </tr>
+            <tr>
+                <td><button class="bt"> π </button></td>
+                <td><button class="bt"> cos </button></td>
+                <td><button class="bt"> log </button></td>
+            </tr>
+            <tr>
+                <td><button class="bt"> e </button></td>
+                <td><button class="bt"> tan </button></td>
+                <td><button class="bt"> √ </button></td>
+            </tr>
+            <tr>
+                <td><button class="bt"> Ans </button></td>
+                <td><button class="bt">  EXP </button></td>
+                <td><button class="bt"> Xy</button></td>
+            </tr>
+            </tbody>
+        </table>
+        <table style=" height: 235px; width: 344px; background: white; border-width: 1px;  border-style: solid; float: right; ">
+            <tbody>
+            <tr>
+                <td><button onclick="dauphu('(');" class="bt"> ( </button></td>
+                <td><button onclick="dauphu(')');" class="bt"> ) </button></td>
+                <td><button onclick="dauphu('%');" class="bt"> % </button></td>
+                <td><button onclick="dauce();" class="bt"> CE </button></td>
+            </tr>
+            <tr>
+                <td><button onclick="so(7);" class="bt"> 7 </button></td>
+                <td><button onclick="so(8);" class="bt"> 8 </button></td>
+                <td><button onclick="so(9);" class="bt"> 9 </button></td>
+                <td><button onclick="pheptinh('/');" class="bt"> / </button></td>
+            </tr>
+            <tr>
+                <td><button onclick="so(4);" class="bt"> 4 </button></td>
+                <td><button onclick="so(5);" class="bt"> 5 </button></td>
+                <td><button onclick="so(6);" class="bt"> 6 </button></td>
+                <td><button onclick="pheptinh('*');" class="bt"> x </button></td>
+            </tr>
+            <tr>
+                <td><button onclick="so(1);" class="bt"> 1 </button></td>
+                <td><button onclick="so(2);" class="bt"> 2 </button></td>
+                <td><button onclick="so(3);" class="bt"> 3 </button></td>
+                <td><button onclick="pheptinh('-');" class="bt"> - </button></td>
+            </tr>
+            <tr>
+                <td><button onclick="so(0);" class="bt"> 0 </button></td>
+                <td><button onclick="dauphu('.');" class="bt"> . </button></td>
+                <td><button onclick="daubang();" class="bt"> = </button></td>
+                <td><button onclick="pheptinh('+');" class="bt"> + </button></td>
+            </tr>
+            </tbody>
+        </table>
+        ​
+    </div>
+</div>
+<script>
+    var i=0;
+    var chuoihientai="";
+    var daubangkt;
+    function kt2ptlt() {i = document.getElementById("ketqua").innerHTML.length;
+        let kytutruocdo1=document.getElementById("ketqua").innerHTML.slice(i-1, i);
+        if(kytutruocdo1==="-"||kytutruocdo1==="*"||kytutruocdo1==="/"||kytutruocdo1==="+") {
+            document.getElementById("ketqua").innerHTML = document.getElementById("ketqua").innerHTML.slice(0, i - 1);
+        }
+    }
+    function ktdautru() {i = document.getElementById("ketqua").innerHTML.length;
+        let kytutruocdo1=document.getElementById("ketqua").innerHTML.slice(i-1, i);
+        if(kytutruocdo1==="-") {
+            document.getElementById("ketqua").innerHTML = document.getElementById("ketqua").innerHTML.slice(0, i - 1);
+        }
+    }
+    function dauphu(dauphuduocnhan) {
+        document.getElementById("ketqua").innerHTML =document.getElementById("ketqua").innerHTML+dauphuduocnhan;
+        daubangkt=0;
+    }
+    function pheptinh(pheptinhduocnhan) {
+        if(pheptinhduocnhan==="-"){
+            ktdautru();
+        }else
+            kt2ptlt();
+        document.getElementById("ketqua").innerHTML =document.getElementById("ketqua").innerHTML+pheptinhduocnhan;
+        daubangkt=0;
+    }
+    function dauce() {
+        i=document.getElementById("ketqua").innerHTML.length;
+        document.getElementById("ketqua").innerHTML=document.getElementById("ketqua").innerHTML.slice(0,i-1);
+        daubangkt=0;
+​
+    }
+    function so(soduocnhan) {
+        if(daubangkt===1) {
+            document.getElementById("ketqua").innerHTML = "";
+            daubangkt=0;
+        }
+        document.getElementById("ketqua").innerHTML =document.getElementById("ketqua").innerHTML+soduocnhan;
+    }
+    function daubang() {
+        chuoihientai=document.getElementById("ketqua").innerHTML;
+        document.getElementById("ketquatruoc").innerHTML=chuoihientai;
+        document.getElementById("ketqua").innerHTML=eval(chuoihientai);
+        daubangkt=1;
+    }
+</script>
+​
+<!--</form>-->
+</body>
+</html>
