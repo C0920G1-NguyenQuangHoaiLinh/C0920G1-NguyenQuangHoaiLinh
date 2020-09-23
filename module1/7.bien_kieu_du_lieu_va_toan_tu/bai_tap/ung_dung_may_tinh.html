@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>
+<input type="number" id="inNumber" name="InNumber">
+<input type="number" id="outNumber" name="OutNumber"><br><br>
+<input type="button" onclick="calAdd()" value="Addition(+)">
+<input type="button" onclick="calSub()" value="Subtraction(-)">
+<input type="button" onclick="calMul()" value="Multiplication(X)">
+<input type="button" onclick="calDivi()" value="Division(/)"></label>
+<p id ="equal"></p>
+<script>
+    function calAdd() {
+        let input = parseFloat(document.getElementById("inNumber").value);
+        let output = parseFloat(document.getElementById("outNumber").value);
+        let result = input + output;
+        document.getElementById("equal").innerHTML = "= " + result;
+    }
+    function calSub() {
+
+        let input = parseFloat(document.getElementById("inNumber").value);
+        let output = parseFloat(document.getElementById("outNumber").value);
+        let result = input - output;
+        document.getElementById("equal").innerHTML = "= " + result;
+    }
+    function calMul() {
+        let input = parseFloat(document.getElementById("inNumber").value);
+        let output = parseFloat(document.getElementById("outNumber").value);
+        let result = input * output;
+        document.getElementById("equal").innerHTML = "= " + result;
+    }
+    function calDivi() {
+        let input = parseFloat(document.getElementById("inNumber").value);
+        let output = parseFloat(document.getElementById("outNumber").value);
+        let result = input / output;
+        document.getElementById("equal").innerHTML = "= " + result;
+    }
+</script>
+</body>
+</html>
