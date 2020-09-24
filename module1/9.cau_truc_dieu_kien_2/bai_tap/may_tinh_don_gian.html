@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            width: 30%;
+
+        }
+        input {
+            padding: 30px;
+            margin-top: 20px;
+            font-size: 30px;
+            color: blue;
+            width: 50px;
+            height: 50px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<fieldset style="width: 1%">
+<table>
+    <input style="width: 300px; height: 30px ; font-size: 30px" type="text" id="display" disabled>
+    <tr>
+        <td><input type="button" value="1" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="2" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="3" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="+" onclick="inCal(this.value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="5" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="6" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="-" onclick="inCal(this.value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="8" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="9" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="*" onclick="inCal(this.value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="C" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="0" onclick="inCal(this.value)"></td>
+        <td><input type="button" value="=" onclick="outCal(this.value)"></td>
+        <td><input type="button" value="/" onclick="inCal(this.value)"></td>
+    </tr>
+</table>
+</fieldset>
+<script>
+    function inCal(demo){
+        document.getElementById("display").value +=demo;
+        if (demo === "C") {
+            document.getElementById("display").value ="";
+        }
+    }
+    function outCal() {
+        let result = document.getElementById("display").value;
+        document.getElementById("display").value = eval(result);
+    }
+</script>
+</body>
+</html>
