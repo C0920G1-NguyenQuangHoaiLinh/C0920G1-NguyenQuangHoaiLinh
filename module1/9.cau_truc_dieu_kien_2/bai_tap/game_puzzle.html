@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 50%;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<img src="game_puzzle/gau1.jpg" alt="" onclick="swapImage1(onclick)" id="floor1">
+<img src="game_puzzle/khi2.jpg" alt="" onclick="swapImage2(onclick)" id="floor2">
+<img src="game_puzzle/khi3.jpg" alt="" onclick="swapImage3(onclick)" id="floor3">
+<img src="game_puzzle/meo4.jpg" alt="" onclick="swapImage4(onclick)" id="floor4">
+<script>
+    let image1 = document.getElementById("floor1").src;
+    let image2 = document.getElementById("floor2").src;
+    let image3 = document.getElementById("floor3").src;
+    let image4 = document.getElementById("floor4").src;
+
+    function swapImage1(onclick) {
+        if (image1 == "game_puzzle/meo1.jpg") {
+            image1 = document.getElementById("floor1").src = "game_puzzle/khi1.jpg";
+        } else if (image1 == "game_puzzle/khi1.jpg") {
+            image1 = document.getElementById("floor1").src = "game_puzzle/gau1.jpg";
+        } else {
+            image1 = document.getElementById("floor1").src = "game_puzzle/meo1.jpg";
+        }
+        if (image1 == "game_puzzle/meo1.jpg" && image2 == "game_puzzle/meo2.jpg" && image3 == "game_puzzle/meo3.jpg" && image4 == "game_puzzle/meo4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình con mèo");
+        } else if (image1 == "game_puzzle/khi1.jpg" && image2 == "game_puzzle/khi2.jpg" && image3 == "game_puzzle/khi3.jpg" && image4 == "game_puzzle/khi4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình con khỉ");
+        } else if (image1 == "game_puzzle/gau1.jpg" && image2 == "game_puzzle/gau2.jpg" && image3 == "game_puzzle/gau3.jpg" && image4 == "game_puzzle/gau4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình gấu trúc");
+        }
+    }
+
+    function swapImage2(onclick) {
+        if (image2 == "game_puzzle/meo2.jpg") {
+            image2 = document.getElementById("floor2").src = "game_puzzle/khi2.jpg";
+        } else if (image2 == "game_puzzle/khi2.jpg") {
+            image2 = document.getElementById("floor2").src = "game_puzzle/gau2.jpg";
+        } else {
+            image2 = document.getElementById("floor2").src = "game_puzzle/meo2.jpg";
+        }
+        if (image1 == "game_puzzle/meo1.jpg" && image2 == "game_puzzle/meo2.jpg" && image3 == "game_puzzle/meo3.jpg" && image4 == "game_puzzle/meo4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình con mèo");
+        } else if (image1 == "game_puzzle/khi1.jpg" && image2 == "game_puzzle/khi2.jpg" && image3 == "game_puzzle/khi3.jpg" && image4 == "game_puzzle/khi4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình con khỉ");
+        } else if (image1 == "game_puzzle/gau1.jpg" && image2 == "game_puzzle/gau2.jpg" && image3 == "game_puzzle/gau3.jpg" && image4 == "game_puzzle/gau4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình gấu trúc");
+        }
+    }
+
+    function swapImage3(onclick) {
+        if (image3 == "game_puzzle/meo3.jpg") {
+            image3 = document.getElementById("floor3").src = "game_puzzle/khi3.jpg";
+        } else if (image3 == "game_puzzle/khi3.jpg") {
+            image3 = document.getElementById("floor3").src = "game_puzzle/gau3.jpg";
+        } else {
+            image3 = document.getElementById("floor3").src = "game_puzzle/meo3.jpg";
+        }
+        if (image1 == "game_puzzle/meo1.jpg" && image2 == "game_puzzle/meo2.jpg" && image3 == "game_puzzle/meo3.jpg" && image4 == "game_puzzle/meo4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình con mèo");
+        } else if (image1 == "game_puzzle/khi1.jpg" && image2 == "game_puzzle/khi2.jpg" && image3 == "game_puzzle/khi3.jpg" && image4 == "game_puzzle/khi4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình con khỉ");
+        } else if (image1 == "game_puzzle/gau1.jpg" && image2 == "game_puzzle/gau2.jpg" && image3 == "game_puzzle/gau3.jpg" && image4 == "game_puzzle/gau4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình gấu trúc");
+        }
+    }
+
+    function swapImage4(onclick) {
+        if (image4 == "game_puzzle/meo4.jpg") {
+            image4 = document.getElementById("floor4").src = "game_puzzle/khi4.jpg";
+        } else if (image4 == "game_puzzle/khi4.jpg") {
+            image4 = document.getElementById("floor4").src = "game_puzzle/gau4.jpg";
+        } else {
+            image4 = document.getElementById("floor4").src = "game_puzzle/meo4.jpg";
+        }
+        if (image1 == "game_puzzle/meo1.jpg" && image2 == "game_puzzle/meo2.jpg" && image3 == "game_puzzle/meo3.jpg" && image4 == "game_puzzle/meo4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình con mèo");
+        } else if (image1 == "game_puzzle/khi1.jpg" && image2 == "game_puzzle/khi2.jpg" && image3 == "game_puzzle/khi3.jpg" && image4 == "game_puzzle/khi4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình con khỉ");
+        } else if (image1 == "game_puzzle/gau1.jpg" && image2 == "game_puzzle/gau2.jpg" && image3 == "game_puzzle/gau3.jpg" && image4 == "game_puzzle/gau4.jpg") {
+            alert("Chúc mừng ! ghép thành công hình gấu trúc");
+        }
+    }
+
+</script>
+</body>
+</html>
