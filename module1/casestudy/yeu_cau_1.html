@@ -3,10 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        p , h1{
+            font-weight: bold;
+            color: #dddddd;
+            text-align: left;
+        }
+        body {
+            background-image: url("Review-Furama-Resort-Da-Nang-13.jpg");
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
+<h1>Furama Resort</h1>
+<form>
+    <p>FullName <input type="text" id="name"></p>
+    <p>IdCard <input type="number" id="idCard"></p>
+    <p>Birthday <input type="date" id="birthday"></p>
+    <p>Email <input type="text" id="email"> </p>
+    <p>Address <input type="text" id="address"></p>
+    <p>TypeCustomer <select id="typeCustomer">
+        <option value="Diamond">Diamond</option>
+        <option value="Platinum">Platinum</option>
+        <option value="Gold">Gold</option>
+        <option value="Silver">Silver</option>
+        <option value="Member">Member</option>
+    </select></p>
+    <p>Discount <input type="text" id="discount"></p>
+    <p>Quantity Included <input type="text" id="quantityIncluded"></p>
+    <p>RentsDay <input type="text" id="rentsDay"></p>
+    <p>Service <select id="service">
+        <option value="Villa">Villa</option>
+        <option value="House">House</option>
+        <option value="Room">Room</option>
+    </select></p>
+    <p>TypeRoom <select id="typeRoom">
+        <option value="Vip">Vip</option>
+        <option value="Business">Business</option>
+        <option value="Normal">Normal</option>
+    </select></p>
+    <input type="button" value="Confirm" onclick="inputForm()">
+    <input type="reset" value="Reset">
+</form>
+<p>Information Customer <br></p>
+<p id="display"></p>
 <script>
-
+    function inputForm() {
+        let name = document.getElementById("name").value;
+        let idCard = document.getElementById("idCard").value;
+        let birthday = document.getElementById("birthday").value;
+        let email = document.getElementById("email").value;
+        let address = document.getElementById("address").value;
+        let typeCustomer = document.getElementById("typeCustomer").value;
+        let discount = document.getElementById("discount").value;
+        let quantityIncluded = document.getElementById("quantityIncluded").value;
+        let rentsDay = document.getElementById("rentsDay").value;
+        let service = document.getElementById("service").value;
+        let typeRoom = document.getElementById("typeRoom").value;
+        let totalPay;
+        switch (service) {
+            case ("Villa"):
+                totalPay = 500 * rentsDay * (1 - (discount/100));
+                break;
+            case ("House"):
+                totalPay = 300 * rentsDay * (1 - (discount/100));
+                break;
+            case ("Room"):
+                totalPay = 100 * rentsDay * (1 - (discount/100));
+                break;
+        }
+        document.getElementById("display").innerHTML = "";
+        document.getElementById("display").innerHTML += "FullName :" + name;
+        document.getElementById("display").innerHTML += "<br>" + "IdCard : " + idCard;
+        document.getElementById("display").innerHTML += "<br>" + "Birthday : " + birthday;
+        document.getElementById("display").innerHTML += "<br>" + "Email : " + email;
+        document.getElementById("display").innerHTML += "<br>" + "Address : " + address;
+        document.getElementById("display").innerHTML += "<br>" + "TypeCustomer : " + typeCustomer;
+        document.getElementById("display").innerHTML += "<br>" + "Discount : " + discount;
+        document.getElementById("display").innerHTML += "<br>" + "QuantityIncluded : " + quantityIncluded;
+        document.getElementById("display").innerHTML += "<br>" + "RentsDay : " + rentsDay;
+        document.getElementById("display").innerHTML += "<br>" + "Service : " + service;
+        document.getElementById("display").innerHTML += "<br>" + "TypeRoom : " + typeRoom;
+        document.getElementById("display").innerHTML += "<br>" + "TotalPay : " + totalPay + " $ ";
+    }
 </script>
 </body>
 </html>
