@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = parseFloat(prompt("so luong so nguyen to can in (max 20): "));
+    let N = 2;
+    while (num > 20){
+        num = parseFloat(prompt("so luong so nguyen to can in (max 20): "));
+    }
+    if (num <=20) {
+        for (let count = 0; count < num;) {
+            if (N === 2 || N === 3){
+                document.write(N + ", ");
+                count++
+            }else if (N % 2 !== 0 && N % 3 !== 0) {
+                document.write(N + ", ");
+                count++
+            }
+            N++;
+        }
+    } else {
+        alert("toi da la 20 so");
+    }
+</script>
+</body>
+</html>
