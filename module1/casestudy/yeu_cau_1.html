@@ -38,6 +38,7 @@
         <option value="House">House</option>
         <option value="Room">Room</option>
     </select></p>
+    <p><a style="border-style: solid">Villa = 500$ ; House = 300$ ; Room = 100$ </a></p>
     <p>TypeRoom <select id="typeRoom">
         <option value="Vip">Vip</option>
         <option value="Business">Business</option>
@@ -47,7 +48,9 @@
     <input type="reset" value="Reset">
 </form>
 <p>Information Customer <br></p>
-<p id="display"></p>
+<table id="display" border="1"; style="border: sandybrown ; background-color: sandybrown">
+</table>
+
 <script>
     function inputForm() {
         let name = document.getElementById("name").value;
