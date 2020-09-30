@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="game()" value="Play">Play</button>
+<script>
+    function game() {
+        let a = parseInt(prompt("nhập vào khoảng muốn đoán (từ 1 đến số nhập vào)"));
+        let x = Math.floor((Math.random() * a) + 1);
+        let i = 0;
+        do {
+            let num = parseInt(prompt("nhập vào số muốn đoán"));
+            if (num === x) {
+                alert("chúc mừng ! đoán chính xác !");
+                break;
+            }else if (num > x){
+                alert("số cần đoán nhỏ hơn");
+            }else{
+                alert("số cần đoán lớn hơn");
+            }
+            i++;
+        }while (i < 3);
+    }
+</script>
+</body>
+</html>

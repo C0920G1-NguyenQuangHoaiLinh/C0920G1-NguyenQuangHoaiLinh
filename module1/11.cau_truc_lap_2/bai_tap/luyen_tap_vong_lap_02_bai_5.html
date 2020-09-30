@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tienVay = parseInt(prompt("nhập số tiền vay"));
+    let soThang = parseInt(prompt("nhập số tháng vay"));
+    let laiSuat = 0.03;
+    let tongLai = 0;
+    for (let i = 1; i <= soThang; i++){
+        let tienLai = tienVay * laiSuat;
+        console.log(tienLai);
+        tienVay += tienLai;
+        tongLai += tienLai;
+    }
+    document.write("tiền lãi của " + soThang + " là " + tongLai);
+</script>
+</body>
+</html>
