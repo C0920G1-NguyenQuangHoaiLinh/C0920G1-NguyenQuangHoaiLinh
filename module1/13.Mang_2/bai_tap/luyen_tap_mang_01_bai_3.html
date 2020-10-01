@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [3,5,7];
+    let max = arr[0];
+    let average = 0;
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] > max){
+            max = arr[i];
+        }
+        average += arr[i]/arr.length;
+    }
+    document.write("giá trị max = " + max + "<br>");
+    document.write("giá trị trung bình : " + average);
+</script>
+</body>
+</html>
