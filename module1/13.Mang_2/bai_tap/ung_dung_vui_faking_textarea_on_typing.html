@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h1>Type anything slowly</h1>
+    <textarea id="txt" cols="40" rows="10" onkeydown="typeText()"></textarea>
+</div>
+<script>
+    let arr = ['T', 'Ô', 'I', ' ', 'L', 'À', ' ', 'M', 'Ộ', 'T', ' ', 'Đ', 'Ứ', 'A', ' ', 'N', 'G', 'Ố', 'C', '!'];
+    let result = "";
+    function typeText() {
+        let text = document.getElementById("txt").value;
+        if (text.length > 0) {
+            for (let i = 0; i < text.length; i++) {
+                result += arr[i];
+                if (i === 20) {
+                    text.value = "";
+                    result = "";
+                }
+            }
+        }
+        document.getElementById("txt").value = result;
+        result = "";
+        setTimeout("typeText()", 1);
+    }
+</script>
+</body>
+</html>
