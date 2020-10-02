@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let starOne = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let starTwo = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function funStar(star) {
+        for (let i = 0 ; i < starOne.length ; i++){
+            if (starOne[i]===star){
+                return starTwo[i];
+            }
+        }
+        return "khong tim thay";
+    }
+    let star = prompt("nhap 1 gia tri tim kiem");
+    alert(funStar(star));
+</script>
+</body>
+</html>
