@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("nhập số cần kiểm tra"));
+    function isPrime() {
+        if (a === 1){
+            alert(a + " không phải là số nguyên dương");
+        } else if (a % 2 !== 0 && a % 3 !== 0){
+            alert(a + " là số nguyên dương");
+        } else {
+            alert(a + " không phải là số nguyên dương");
+        }
+    }
+    isPrime();
+</script>
+</body>
+</html>

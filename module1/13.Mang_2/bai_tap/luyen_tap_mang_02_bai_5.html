@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let a = [['n','o',1,2],['n','o',1,3]];
+    // for (let i = 0; i < a.length; i++){
+    //     for (let j = 0; j < a[i].length; j++){
+    //         document.write(a[i][j]);
+    //     }document.write("<br>");
+    //     if (a[])
+    // }
+    let a = prompt("nhap gia tri chuoi a");
+    let b = prompt("nhap gia tri chuoi b");
+    if (a.length !== b.length) {
+        document.write("hai chuoi khac nhau")
+    } else {
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] !== b[i]) {
+                document.write("hai chuoi khac nhau");
+                break;
+            }
+            if (i === a.length - 1) {
+                document.write("hai chuoi giong nhau");
+            }
+        }
+    }
+</script>
+</body>
+</html>

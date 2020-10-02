@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<input type="button" onclick="footToMet()" value="Foot to Met" id="met">
+<input type="button" onclick="metToFoot()" value="Met to Foot" id="foot">
+<p id="output"></p>
+<script>
+
+    function footToMet() {
+        let foot = document.getElementById("input").value;
+        let meter = 0.305 * foot ;
+        document.getElementById("output").innerText = meter;
+    }
+
+    function metToFoot() {
+        let meter = document.getElementById("input").value;
+        let foot = 3.279 * meter ;
+        document.getElementById("output").innerHTML = foot;
+    }
+</script>
+</body>
+</html>
