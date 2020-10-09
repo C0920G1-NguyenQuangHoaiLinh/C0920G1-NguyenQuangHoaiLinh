@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="game" ></div>
+<script>
+    class Hero{
+        constructor(image, top, left, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+        }
+        getHeroElement(){
+            return '<img alt="pikachu" width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        }
+        moveRight(){
+            this.left += 20;
+            console.log('ok: ' + this.left);
+        }
+        moveDown(){
+            this.top += 20;
+            console.log('ok : ' + this.top);
+        }
+        moveLeft(){
+            this.left -= 20;
+            console.log('ok: ' + this.left);
+        }
+        moveUp(){
+            this.top -= 20;
+            console.log('ok : ' + this.top);
+        }
+    }
+
+    let hero = new Hero('pikachu.png', 20, 30, 200);
+    let checkRight = true;
+    let checkUp = false;
+    function start(){
+        if(hero.left < window.innerWidth - hero.size && checkRight){
+            hero.moveRight();
+        } else if (hero.top < window.innerHeight - hero.size && !checkUp){
+            hero.moveDown();
+            checkRight = false;
+        }
+        else if (hero.left > 0 && !checkRight){
+            hero.moveLeft();
+            checkUp = true;
+        }
+        else if (hero.top > 0 && checkUp){
+            hero.moveUp();
+        } else {
+            checkRight = true;
+            checkUp = false;
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 20)
+    }
+
+    start();
+</script>
+</body>
+</html>
