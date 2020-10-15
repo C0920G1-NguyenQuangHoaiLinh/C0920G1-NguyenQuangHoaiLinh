@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [1, 2, 3, 4, 5];
+    let b = [];
+    for (let i = 0; i < a.length; i++) {
+        b[i] = 0;
+        for (let j = 0; j < i + 1; j++){
+            b[i] += a[j];
+        }
+    }
+    alert(b);
+</script>
+</body>
+</html>

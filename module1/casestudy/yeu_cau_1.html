@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module1_AccountName</title>
+</head>
+<body>
+    <script>
+        let name = prompt("Input name: ");
+        let cmnd = prompt("Input cmnd: ");
+        let brith = prompt("Input brithday: ");
+        let email = prompt("Input email: ");
+        let address = prompt("Input address: ");
+        let typeCustomer = prompt("Input typeCustomer: " );
+        let discount = prompt("Input discount: ");
+        let quantityIncluded = prompt("Input quantityIncluded: ");
+        let rentDays = prompt("Input rentDays: ");
+        let typeService = prompt("Input typeService: ");
+        alert("Price list : " + "\n" + "Villa 500$/ 1 ngày" + "\n" + "House 300$/1 ngày" + "\n" + "Room: 100$/1 ngày");
+        let typeRoom = prompt("Input typeRoom: ");
+        let priceRoom = prompt("Input priceRoom : ");
+        let totalPay = priceRoom * parseFloat(rentDays) * (1 - parseFloat(discount)/100);
+        alert("Name : " + name + "\n" +
+                "Cmnd : " + cmnd + "\n" +
+                "birthday : " + brith + "\n" +
+                "email : " + email + "\n" +
+                "address : " + address + "\n" +
+                "typeCustomer : " + typeCustomer + "\n" +
+                "totalPay : " + totalPay);
+
+    </script>
+</body>
+</html>

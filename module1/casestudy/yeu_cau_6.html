@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeu cau 6</title>
+</head>
+<body>
+<script>
+    class Customer {
+        constructor(name, cmnd, brith, email, address, typeCustomer, discount, quantityIncluded, rentDays, typeService,
+                    typeRoom) {
+            this.name = name;
+            this.cmnd=cmnd;
+            this.brith=brith;
+            this.email=email;
+            this.address=address;
+            this.typeCustomer=typeCustomer;
+            this.discount=discount;
+            this.quantityIncluded=quantityIncluded;
+            this.rentDays=rentDays;
+            this.typeService=typeService;
+            this.typeRoom=typeRoom;
+        }
+        setName (name){
+            this.name=name;
+        }
+        setCmnd (cmnd){
+            this.cmnd=cmnd;
+        }
+        setBrith (brith){
+            this.brith=brith;
+        }
+        setEmail (email){
+            this.email=email;
+        }
+        setAddress (address){
+            this.address=address;
+        }
+        setTypeCustomer (typeCustomer){
+            this.typeCustomer=typeCustomer;
+        }
+        setDiscount (discount){
+            this.discount=discount;
+        }
+        setQuantityIncluded (quantityIncluded){
+            this.quantityIncluded=quantityIncluded;
+        }
+        setRentDays (rentDays){
+            this.rentDays=rentDays;
+        }
+        setTypeService (typeService){
+            this.typeService=typeService;
+        }
+        setTypeRoom (typeRoom){
+            this.typeRoom=typeRoom;
+        }
+
+        getName(){
+            return this.name;
+        }
+        getCmnd(){
+            return this.cmnd;
+        }
+        getBrith(){
+            return this.brith;
+        }
+        getEmail(){
+            return this.email;
+        }
+        getAddress(){
+            return this.address;
+        }
+        getTypeCustomer(){
+            return this.typeCustomer;
+        }
+        getDiscount(){
+            return this.discount;
+        }
+        getQuantityIncluded(){
+            return this.quantityIncluded;
+        }
+        getRentdays(){
+            return this.rentDays;
+        }
+        getTypeService(){
+            return this.typeService;
+        }
+        getTypeRoom(){
+            return this.typeRoom;
+        }
+        payment(){
+            let totalPay;
+            if(this.typeService==="Villa"){
+                totalPay = 500 * parseFloat(this.rentDays) * (1 - parseFloat(this.discount)/100);
+            }else if (this.typeService==="House"){
+                totalPay = 300 * parseFloat(this.rentDays) * (1 - parseFloat(this.discount)/100);
+            }else if (this.typeService==="Room"){
+                totalPay = 100 * parseFloat(this.rentDays) * (1 - parseFloat(this.discount)/100);
+            }
+            return totalPay;
+        }
+    }
+    class Employee {
+        constructor(name, cmnd, brith, phone, email, level, position) {
+            this.name=name;
+            this.cmnd=cmnd;
+            this.brith=brith;
+            this.phone=phone;
+            this.email=email;
+            this.level=level;
+            this.position=position;
+            this.salary=0;
+        }
+        setName(name){
+            this.name=name;
+        }
+        setCmnd(cmnd){
+            this.cmnd=cmnd;
+        }
+        setBrith(brith){
+            this.brith=brith;
+        }
+        setPhone(phone){
+            this.phone=phone;
+        }
+        setEmail(email){
+            this.email=email;
+        }
+        setLevel(level){
+            this.level=level;
+        }
+        setPosition(position){
+            this.position=position;
+        }
+        getName(){
+            return this.name;
+        }
+        getCmnd(){
+            return this.cmnd;
+        }
+        getBrith(){
+            return this.brith;
+        }
+        getPhone(){
+            return this.phone;
+        }
+        getEmail(){
+            return this.email;
+        }
+        getLevel(){
+            return this.level;
+        }
+        getPosition(){
+            return this.position;
+        }
+        getSalary(){
+            if (this.position==="Manager"){
+                this.salary = 500;
+            }else if (this.position==="Sale"){
+                this.salary = 300;
+            }else if (this.position==="Marketing"){
+                this.salary = 200;
+            }
+            return this.salary;
+        }
+    }
+    let arrListCustomer=[];
+    let arrListEmployee=[];
+    function addNewEmployee(){
+        let name = prompt("Input name: ");
+        let cmnd = prompt("Input cmnd: ");
+        let brith = prompt("Input brithday: ");
+        let phone = prompt("Input phone: ");
+        let email = prompt("Input email: ");
+        let level = prompt("Input level: " );
+        let position = prompt("Input position: ");
+
+        let employee = new Employee(name, cmnd, brith, phone, email, level, position);
+        arrListEmployee.push(employee);
+        alert("add to finish");
+        displayEmployee();
+    }
+    function displayEmployee() {
+        let temp = "";
+        for (let i=0 ; i<arrListEmployee.length ; i++){
+            temp +=i+".Name : "+ arrListEmployee[i].getName()+"\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        if (chooseDisplay>=0&&chooseDisplay<arrListEmployee.length){
+            alert("1.Name : " + arrListEmployee[chooseDisplay].getName() + "\n" +
+                "2.Cmnd : " + arrListEmployee[chooseDisplay].getCmnd() + "\n" +
+                "3.birthday : " + arrListEmployee[chooseDisplay].getBrith() + "\n" +
+                "4.phone : " + arrListEmployee[chooseDisplay].getPhone() + "\n" +
+                "5.email : " + arrListEmployee[chooseDisplay].getEmail() + "\n" +
+                "6.level : " + arrListEmployee[chooseDisplay].getLevel() + "\n" +
+                "7.position : " + arrListEmployee[chooseDisplay].getPosition() + "\n"+
+                "8.salary : " + arrListEmployee[chooseDisplay].getSalary());
+        }else {
+            displayEmployee();
+        }
+
+        displayMainMenu();
+    }
+
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1.Add new customer "+"\n"+"2.Display information customer "
+            +"\n"+"3.Edit information customer "+"\n"+"4.Delete customer "+"\n"+"5.Display total pay of customer "+"\n"
+            +"6.Add new employee "+"\n"+"7.Display employee "+"\n"+"8.Exit "));
+        switch (choose) {
+            case 1 : {
+                addNewCustomer();
+                break;
+            }
+            case 2 : {
+                displayCustomer();
+                break;
+            }
+            case 3 : {
+                editCustomer();
+                break;
+            }
+            case 4 : {
+                deleteCustomer();
+                break;
+            }
+            case 5 : {
+                totalPayCustomer();
+                break;
+            }
+            case 6 : {
+                addNewEmployee();
+                break;
+            }
+            case 7 : {
+                displayEmployee();
+                break;
+            }
+            case 8 : {
+                break;
+            }
+            default : {
+                break;
+            }
+        }
+    }
+    function addNewCustomer() {
+        let name = prompt("Input name: ");
+        let cmnd;
+        let check = false;
+        do {
+           cmnd = prompt("Input cmnd: ");
+            let regex =/^[0-9]{9}$/;
+            check = regex.test(cmnd);
+        }while (!check);
+        check = false;
+        let brith;
+        do {
+            brith = prompt("Input brithday: ");
+            let regex = /^((0[1-9])|([1-2][0-9])|(3[0-1]))\/(([0][1-9])|1[0-2])\/(19[0-9]{2}|20[0-1][0-9]|2020)$/;
+            check = regex.test(brith);
+        }while (!check);
+        check = false;
+        let email;
+        do {
+            email = prompt("Input email: ");
+            let regex =/^[a-z]\w{2,}@[a-zA-Z]{3,20}\.[a-zA-Z]{2,7}$/;
+            check = regex.test(email);
+        } while (!check);
+        check = false;
+        let address = prompt("Input address: ");
+        let typeCustomer = prompt("Input typeCustomer: " );
+        let discount;
+
+        do {
+            discount = prompt("Input discount: ");
+            let regex =/^[0-9]{1,2}$/;
+            check = regex.test(discount);
+        }while (!check);
+        check = false;
+        let quantityIncluded = prompt("Input quantityIncluded: ");
+        let rentDays;
+        do {
+            rentDays = prompt("Input rentDays: ");
+            let regex =/^[0-9]{1,2}$/;
+            check = regex.test(rentDays);
+        }while (!check);
+        let typeService = prompt("Input typeService: ");
+        let typeRoom = prompt("Input typeRoom: ");
+
+        let customer = new Customer(name, cmnd, brith, email, address, typeCustomer, discount, quantityIncluded, rentDays,
+            typeService, typeRoom);
+        arrListCustomer.push(customer);
+        alert("add to finish");
+        displayCustomer();
+    }
+    function displayCustomer() {
+        let temp = "";
+        for (let i=0 ; i<arrListCustomer.length ; i++){
+            temp +=i+".Name : "+ arrListCustomer[i].getName()+"\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        if (chooseDisplay>=0&&chooseDisplay<arrListCustomer.length){
+            alert("1.Name : " + arrListCustomer[chooseDisplay].getName() + "\n" +
+                "2.Cmnd : " + arrListCustomer[chooseDisplay].getCmnd() + "\n" +
+                "3.birthday : " + arrListCustomer[chooseDisplay].getBrith() + "\n" +
+                "4.email : " + arrListCustomer[chooseDisplay].getEmail() + "\n" +
+                "5.address : " + arrListCustomer[chooseDisplay].getAddress() + "\n" +
+                "6.typeCustomer : " + arrListCustomer[chooseDisplay].getTypeCustomer() + "\n" +
+                "7.typeService : " + arrListCustomer[chooseDisplay].getTypeService() + "\n"+
+                "8.discount : " + arrListCustomer[chooseDisplay].getDiscount() + "\n"+
+                "9.typeRoom : " + arrListCustomer[chooseDisplay].getTypeRoom() + "\n"+
+                "10.rentDay : " + arrListCustomer[chooseDisplay].getRentdays() + "\n"+
+                "11.quantityIncluded : " + arrListCustomer[chooseDisplay].getQuantityIncluded());
+        }else {
+            displayCustomer();
+        }
+
+
+        displayMainMenu();
+    }
+    function editCustomer() {
+        let temp = "";
+        for (let i=0 ; i<arrListCustomer.length ; i++){
+            temp +=i+".Name : "+ arrListCustomer[i].getName()+"\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        let chooseEdit = parseInt(prompt("1.Name : " + arrListCustomer[chooseDisplay].getName() + "\n" +
+            "2.Cmnd : " + arrListCustomer[chooseDisplay].getCmnd() + "\n" +
+            "3.birthday : " + arrListCustomer[chooseDisplay].getBrith() + "\n" +
+            "4.email : " + arrListCustomer[chooseDisplay].getEmail() + "\n" +
+            "5.address : " + arrListCustomer[chooseDisplay].getAddress() + "\n" +
+            "6.typeCustomer : " + arrListCustomer[chooseDisplay].getTypeCustomer() + "\n" +
+            "7.typeService : " + arrListCustomer[chooseDisplay].getTypeService() + "\n"+
+            "8.discount : " + arrListCustomer[chooseDisplay].getDiscount() + "\n"+
+            "9.typeRoom : " + arrListCustomer[chooseDisplay].getTypeRoom() + "\n"+
+            "10.rentDay : " + arrListCustomer[chooseDisplay].getRentdays() + "\n"+
+            "11.quantityIncluded : " + arrListCustomer[chooseDisplay].getQuantityIncluded()));
+        switch (chooseEdit) {
+            case 1: {
+                arrListCustomer[chooseDisplay].setName(prompt("Enter name :"));
+                break;
+            }
+            case 2: {
+                arrListCustomer[chooseDisplay].setCmnd(prompt("Enter cmnd :"));
+                break;
+            }
+            case 3: {
+                arrListCustomer[chooseDisplay].setBrith(prompt("Enter brith :"));
+                break;
+            }
+            case 4: {
+                arrListCustomer[chooseDisplay].setEmail(prompt("Enter email :"));
+                break;
+            }
+            case 5: {
+                arrListCustomer[chooseDisplay].setAddress(prompt("Enter address :"));
+                break;
+            }
+            case 6: {
+                arrListCustomer[chooseDisplay].setTypeCustomer(prompt("Enter typeCustomer :"));
+                break;
+            }
+            case 7: {
+                arrListCustomer[chooseDisplay].setTypeService(prompt("Enter typeService :"));
+                break;
+            }
+            case 8: {
+                arrListCustomer[chooseDisplay].setDiscount(prompt("Enter discount :"));
+                break;
+            }
+            case 9: {
+                arrListCustomer[chooseDisplay].setTypeRoom(prompt("Enter typeRoom :"));
+                break;
+            }
+            case 10: {
+                arrListCustomer[chooseDisplay].setRentDays(prompt("Enter rentDays :"));
+                break;
+            }
+            case 11: {
+                arrListCustomer[chooseDisplay].setQuantityIncluded(prompt("Enter quantityIncluded :"));
+                break;
+            }
+            default: {
+                alert("Failed");
+                break;
+            }
+        }
+        displayCustomer();
+    }
+    function deleteCustomer() {
+        let temp = "";
+        for (let i=0 ; i<arrListCustomer.length ; i++){
+            temp +=i+".Name : "+ arrListCustomer[i].getName()+"\n";
+        }
+        let chooseDelete = parseInt(prompt(temp));
+        let check = parseInt(prompt("Are you want delete customer ? "+"\n1.Yes    2.No"));
+        if (check===1){
+            arrListCustomer.splice(chooseDelete,1);
+            alert("Delete finish");
+        }else {
+            alert("Cancel");
+        }
+        displayCustomer();
+
+    }
+    function totalPayCustomer(){
+        let temp = "";
+        for (let i=0 ; i<arrListCustomer.length ; i++){
+            temp +=i+".Name : "+ arrListCustomer[i].getName()+"\n";
+        }
+        let choosePay = parseInt(prompt(temp));
+        alert("Total payment : "+arrListCustomer[choosePay].payment());
+        displayCustomer();
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>

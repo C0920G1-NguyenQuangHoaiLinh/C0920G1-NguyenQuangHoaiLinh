@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 2</title>
+</head>
+<body>
+<script>
+    let name = prompt("Input name: ");
+    let cmnd = prompt("Input cmnd: ");
+    let brith = prompt("Input brithday: ");
+    let email = prompt("Input email: ");
+    let address = prompt("Input address: ");
+    let typeCustomer = prompt("Input typeCustomer: " );
+    let discount = prompt("Input discount: ");
+    let quantityIncluded = prompt("Input quantityIncluded: ");
+    let rentDays = prompt("Input rentDays: ");
+    let typeService = prompt("Input typeService: ");
+    alert("Price list : " + "\n" + "Villa 500$/ 1 ngày" + "\n" + "House 300$/1 ngày" + "\n" + "Room: 100$/1 ngày");
+    let typeRoom = prompt("Input typeRoom: ");
+    let priceRoom = prompt("Input priceRoom : ");
+    let totalPay = priceRoom * parseFloat(rentDays) * (1 - parseFloat(discount)/100);
+    let currentYear = new Date().getFullYear();
+    let birthday = new Date(brith).getFullYear();
+    let ageCustomer = currentYear - birthday;
+
+    let choose = parseInt(prompt("1.Show Information Customer." + "\n" +
+    "2.Edit Information Customer." + "\n" +
+    "3.Show the amount to be paid after discount."));
+    switch (choose) {
+        case 1: {
+            alert("1.Name : " + name + "\n" +
+                "2.Cmnd : " + cmnd + "\n" +
+                "3.birthday : " + brith + "\n" +
+                "4.email : " + email + "\n" +
+                "5.address : " + address + "\n" +
+                "6.typeCustomer : " + typeCustomer + "\n" +
+                "7.typeService : " + typeService + "\n"+
+                "8.discount : " + discount + "\n"+
+                "9.typeRoom : " + typeRoom + "\n"+
+                "10.rentDay : " + rentDays + "\n"+
+                "11.quantityIncluded : " + quantityIncluded);
+            break;
+        }
+        case 2: {
+            let chooseEdit = parseInt(prompt("1.Name : " + name + "\n" +
+                "2.Cmnd : " + cmnd + "\n" +
+                "3.birthday : " + brith + "\n" +
+                "4.email : " + email + "\n" +
+                "5.address : " + address + "\n" +
+                "6.typeCustomer : " + typeCustomer + "\n" +
+                "7.typeService : " + typeService + "\n"+
+                "8.discount : " + discount + "\n"+
+                "9.typeRoom : " + typeRoom + "\n"+
+                "10.rentDay : " + rentDays + "\n"+
+                "11.quantityIncluded : " + quantityIncluded));
+            switch (chooseEdit) {
+                case 1: {
+                    name = prompt("Enter name :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                case 2: {
+                    cmnd = prompt("Enter cmnd :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                case 3: {
+                    brith = prompt("Enter brith :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                case 4: {
+                    email = prompt("Enter email :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                case 5: {
+                    address = prompt("Enter address :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                case 6: {
+                    typeCustomer = prompt("Enter typeCustomer :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                case 7: {
+                    typeService = prompt("Enter typeService :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                case 8: {
+                    discount = prompt("Enter discount :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                case 9: {
+                    typeRoom = prompt("Enter typeRoom :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                case 10: {
+                    rentDays = prompt("Enter rentDays :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                case 11: {
+                    quantityIncluded = prompt("Enter quantityIncluded :");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                }
+                default: {
+                    alert("Failed");
+                    parseInt(prompt("1.Name : " + name + "\n" +
+                        "2.Cmnd : " + cmnd + "\n" +
+                        "3.birthday : " + brith + "\n" +
+                        "4.email : " + email + "\n" +
+                        "5.address : " + address + "\n" +
+                        "6.typeCustomer : " + typeCustomer + "\n" +
+                        "7.typeService : " + typeService + "\n"+
+                        "8.discount : " + discount + "\n"+
+                        "9.typeRoom : " + typeRoom + "\n"+
+                        "10.rentDay : " + rentDays + "\n"+
+                        "11.quantityIncluded : " + quantityIncluded));
+                    break;
+                }
+            }
+            break;
+        }
+        case 3: {
+            if (address == "Da Nang") {
+                totalPay = totalPay - 20;
+            } else if (address =="Hue"){
+                totalPay = totalPay - 10;
+            } else if (address =="Quang Nam"){
+                totalPay = totalPay - 5;
+            }
+            if (rentDays > 7){
+                totalPay = totalPay - 30;
+            }else if (5 <= rentDays <= 7){
+                totalPay = totalPay - 20;
+            }else if (2 <= rentDays <= 4){
+                totalPay = totalPay - 10;
+            }
+            if (typeCustomer == "Diamond"){
+                totalPay = totalPay - 15;
+            }else if (typeCustomer == "Platium"){
+                totalPay = totalPay - 10;
+            }else if (typeCustomer == "Gold"){
+                totalPay = totalPay - 5;
+            }else if (typeCustomer == "Silver"){
+                totalPay = totalPay - 2;
+            }
+            if (ageCustomer >= 30 && address=="Da Nang"){
+                totalPay = totalPay - 2;
+            }else if (ageCustomer >= 20 && address=="Da Nang"){
+                totalPay = totalPay - 1;
+            }
+
+            alert("totalPay : " + totalPay);
+            break;
+        }
+        default: {
+            alert("Sự lựa chọn của bạn không có trong trình đơn");
+            break;
+        }
+    }
+</script>
+</body>
+</html>

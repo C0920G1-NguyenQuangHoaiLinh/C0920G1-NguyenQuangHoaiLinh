@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeu cau 4</title>
+</head>
+<body>
+<script>
+    let arrNameCustomer = [];
+    while (true) {
+        let choose = parseInt(prompt("1.Add New Customers : " + "\n" + "2.Delete Customers : "));
+        switch (choose) {
+            case 1 : {
+                let number = parseInt(prompt("enter number customer you want add to arr : "));
+                for (let i = 0; i < number; i++) {
+                    let nameCustomer = prompt("enter name of customer");
+                    arrNameCustomer.push(nameCustomer);
+                }
+                let result = "";
+                arrNameCustomer.sort();
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    result += (i + 1) + "." + arrNameCustomer[i] + "\n";
+                }
+                alert(result);
+                break;
+            }
+            case 2 : {
+                check = false;
+                let nameCustomer = prompt("enter name customer you want delete");
+                for (let i = 0; i<nameCustomer.length ; i++){
+                    if (arrNameCustomer[i]===nameCustomer){
+                        arrNameCustomer.splice(i,1);
+                        check = true;
+                    }
+                }
+                if (!check){
+                    alert("name customer is not failed");
+                }
+                let result = "";
+                arrNameCustomer.sort();
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    result += (i + 1) + "." + arrNameCustomer[i] + "\n";
+                }
+                alert(result);
+                break;
+            }
+            default : {
+                alert("failed");
+            }
+        }
+    }
+</script>
+</body>
+</html>

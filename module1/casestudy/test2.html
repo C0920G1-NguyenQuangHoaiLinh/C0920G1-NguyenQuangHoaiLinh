@@ -122,7 +122,7 @@
                         <option value="Normal">Normal</option>
                     </td>
                 </tr>
-                <tr>
+                          <tr>
                     <td><input type="button" value="Confirm" onclick="inputForm()"></td>
                     <td><input type="reset" value="Reset"></td>
                 </tr>
@@ -194,8 +194,8 @@
                 <td style="border: 2px solid black"><input type="button" value="Edit" onclick="editCustomer3()"></td>
                 <td style="border: 2px solid black"><input type="button" value="Delete" onclick="editCustomer3()"></td>
             </tr>
+            <input type="button" value="Option" onclick="editForm()">
         </table>
-        <input style="margin-top: 5px" type="button" value="Option" onclick="editForm()">
     </div>
 </div>
 
@@ -207,7 +207,7 @@
     let email = document.getElementById("email").value;
     let address = document.getElementById("address").value;
     let typeCustomer = document.getElementById("typeCustomer").value;
-    let discount;
+    let discount ;
     let quantityIncluded = document.getElementById("quantityIncluded").value;
     let rentsDay = document.getElementById("rentsDay").value;
     let service = document.getElementById("service").value;
@@ -229,22 +229,18 @@
             return count = 0;
         }
     }
-
     function checkEmail(email) {
-        let regex = /^\w{3,}@[a-zA-Z]{3,5}\.[a-zA-Z]{2,3}$/;
+        let regex =/^\w{3,}@[a-zA-Z]{3,5}\.[a-zA-Z]{2,3}$/;
         return regex.test(email);
     }
-
     function checkBirthday(birthday) {
-        let regex = /^((0[1-9])|([1-2][0-9])|(3[0-1]))\/(([0][1-9])|1[0-2])\/(19[0-9]{2}|20[0-1][0-9]|2020)$/;
+        let regex =/^((0[1-9])|([1-2][0-9])|(3[0-1]))\/(([0][1-9])|1[0-2])\/(19[0-9]{2}|20[0-1][0-9]|2020)$/;
         return regex.test(birthday);
     }
-
     function checkIdCard(idCard) {
         let regex = /^[0-9]{9}$/;
         return regex.test(idCard);
     }
-
     function inputForm1() {
         let name = document.getElementById("name").value;
         let idCard = document.getElementById("idCard").value;
@@ -260,14 +256,14 @@
         let totalPay;
 
         let tempName = "";
-        for (let i = 0; i < name.length; i++) {
-            if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+        for (let i =0 ; i < name.length ; i++){
+            if (name.charAt(i)===" "&&name.charAt(i+1)===" "){
                 continue;
             }
-            if (i === 0 || name.charAt(i - 1) === " ") {
+            if (i===0 || name.charAt(i-1)===" "){
                 tempName += name.charAt(i).toUpperCase();
                 continue;
-            } else if (name.charAt(i - 1) !== " ") {
+            } else if (name.charAt(i-1)!== " "){
                 tempName += name.charAt(i).toLowerCase();
                 continue;
             }
@@ -277,11 +273,11 @@
         name = tempName;
 
         let tempAddress = "";
-        for (let i = 0; i < address.length; i++) {
-            if (address.charAt(i) === " " && address.charAt(i + 1) === " ") {
+        for (let i = 0; i < address.length; i++){
+            if (address.charAt(i)===" "&& address.charAt(i+1)===" "){
                 continue;
             }
-            if (i === 0 || address.charAt(i - 1) === " ") {
+            if (i===0 || address.charAt(i-1)===" "){
                 tempAddress += address.charAt(i).toUpperCase();
                 continue;
             }
@@ -289,23 +285,23 @@
         }
         address = tempAddress;
 
-        if (!checkEmail(email)) {
+        if (!checkEmail(email)){
             alert("email không đúng định dạng");
             return count--;
         }
-        if (!checkBirthday(birthday)) {
+        if (!checkBirthday(birthday)){
             alert("birthday không đúng");
             return count--;
         }
-        if (!checkIdCard(idCard)) {
+        if (!checkIdCard(idCard)){
             alert("Id Card phải có 9 số");
             return count--;
         }
-        if (rentsDay <= 0) {
+        if (rentsDay <= 0){
             alert("số ngày thuê phải lớn hơn 0");
             return count--;
         }
-        if (quantityIncluded < 0) {
+        if (quantityIncluded < 0){
             alert("số người đi kèm không đúng");
             return count--;
         }
@@ -381,11 +377,11 @@
         let totalPay;
 
         let tempName = "";
-        for (let i = 0; i < name.length; i++) {
-            if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+        for (let i =0 ; i < name.length ; i++){
+            if (name.charAt(i)===" "&&name.charAt(i+1)===" "){
                 continue;
             }
-            if (i === 0 || name.charAt(i - 1) === " ") {
+            if (i===0 || name.charAt(i-1)===" "){
                 tempName += name.charAt(i).toUpperCase();
                 continue;
             }
@@ -393,17 +389,16 @@
         }
         name = tempName;
 
-        if (!checkEmail(email)) {
+        if (!checkEmail(email)){
             alert("email không đúng định dạng");
             return count--;
         }
 
         function kiemTraEmail(email) {
-            let regex = /^\w{3,}@[a-zA-Z]{3,5}\.[a-zA-Z]{2,3}$/;
+            let regex =/^\w{3,}@[a-zA-Z]{3,5}\.[a-zA-Z]{2,3}$/;
             return regex.test(email);
         }
-
-        if (!kiemTraEmail(email)) {
+        if (!kiemTraEmail(email)){
             alert("email không đúng định dạng")
             return email = document.getElementById("email").value;
         }
@@ -479,11 +474,11 @@
         let totalPay;
 
         let tempName = "";
-        for (let i = 0; i < name.length; i++) {
-            if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+        for (let i =0 ; i < name.length ; i++){
+            if (name.charAt(i)===" "&&name.charAt(i+1)===" "){
                 continue;
             }
-            if (i === 0 || name.charAt(i - 1) === " ") {
+            if (i===0 || name.charAt(i-1)===" "){
                 tempName += name.charAt(i).toUpperCase();
                 continue;
             }
@@ -491,17 +486,16 @@
         }
         name = tempName;
 
-        if (!checkEmail(email)) {
+        if (!checkEmail(email)){
             alert("email không đúng định dạng");
             return count--;
         }
 
         function kiemTraEmail(email) {
-            let regex = /^\w{3,}@[a-zA-Z]{3,5}\.[a-zA-Z]{2,3}$/;
+            let regex =/^\w{3,}@[a-zA-Z]{3,5}\.[a-zA-Z]{2,3}$/;
             return regex.test(email);
         }
-
-        if (!kiemTraEmail(email)) {
+        if (!kiemTraEmail(email)){
             alert("email không đúng định dạng")
             return email = document.getElementById("email").value;
         }
@@ -589,7 +583,6 @@
         document.getElementById("110").textContent = typeRoom;
         document.getElementById("120").textContent = totalPay;
     }
-
     function editCustomer2() {
         count = 1;
         document.getElementById("11").value = "";
@@ -617,7 +610,6 @@
         document.getElementById("111").textContent = typeRoom;
         document.getElementById("121").textContent = totalPay;
     }
-
     function editCustomer3() {
         count = 2;
         document.getElementById("12").value = "";
@@ -644,10 +636,6 @@
         document.getElementById("102").textContent = service;
         document.getElementById("112").textContent = typeRoom;
         document.getElementById("122").textContent = totalPay;
-    }
-
-    function editForm() {
-
     }
 </script>
 </body>

@@ -5,21 +5,78 @@
     <title>Title</title>
 </head>
 <body>
+<!--<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>-->
 <script>
-    let arr = [1,5,10,-2];
-    function swap() {
-        let arrnew = [];
-        let temp = "";
-        for(let i = 0; i< arr.length/2; i++){
-            temp = arr[i];
-            arr[i] = arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = temp;
+    let num = parseInt(prompt("input"));
+    alert(isFibonacci());
+
+    function isFibonacci() {
+        let a = 0;
+        let b = 1;
+        let c = 1;
+        while (a <= num) {
+            c = a + b;
+            a = b;
+            b = c;
+            if (a === num) {
+                return true;
+            }
         }
-        arrnew = arr;
-        console.log(arrnew);
-        return arrnew;
+        return false;
     }
-    alert(swap())
+
+    // class Circle {
+    //     constructor(x, y, radius, color) {
+    //         this.x = x;
+    //         this.y = y;
+    //         this.radius = radius;
+    //         this.color = color;
+    //     }
+    //     render(){
+    //         let ctx = document.getElementById("myCanvas").getContext("2d");
+    //         ctx.beginPath();
+    //         ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+    //         ctx.fillStyle = this.color;
+    //         ctx.fill();
+    //     }
+    // }
+    // let circle = new Circle(10, 10, 100,"black");
+    // circle.render();
+
+
+    //         Trong đó:
+    //         • var: Biến đại diện lần lượt cho từng phần tử của collection trong mỗi lần lặp
+    // • collection: đối tượng cần lặp
+    //     for (var in collection) {
+    //
+    //     }
+    //     var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    //     for (var element in array) {
+    //         console.log("element = " + array[element]);
+    //     }
+    //     •Phương thức reverse() đảo ngược các phần tử trong mảng,
+    //         trả về một mảng các phần tử bị đảo ngược
+    //     • Sắp xếp các phần tử của mảng sử dụng phương thức sort()
+    //     concat()
+    // •Nối các phần tử của hai mảng với nhau. Trả về mảng mới
+    //     chứa phần tử của mảng gốc và mảng được nối.
+    //     •Hai phương thức push() và pop() hoạt động giống như cấu
+    //     trúc ngăn sếp (stack – first in, last – out):
+    //     • Phương thức push() để nối một hoặc nhiều phần tử vào cuối mảng
+    // • Phương thức pop() xoá đi phần tử cuối cùng của mảng, làm giảm
+    //     kích thước của mảng, trả về gía trị của phần tử bị xoá.
+    //     •Phương thức shift() để xóa phần tử vào đầu mảng
+    // •Phương thức unshift() để nối phần tử đầu tiên của mảng
+    //     •Phương thức chuyển toàn bộ các phần tử trong mảng sang
+    //     dạng chuỗi
+    // arr = [
+    //     ['a', 'b', 'c'], [1, 2, 3]
+    // ];
+    // for (let i = 0; i < arr.length; i++) {
+    //     for (let j = 0; arr[i].length; j++) {
+    //         console.log(arr[i][j]);
+    //     }
+    // }
 </script>
 </body>
 </html>

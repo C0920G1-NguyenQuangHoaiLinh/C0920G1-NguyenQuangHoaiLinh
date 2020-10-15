@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeu cau 5</title>
+</head>
+<body>
+<script>
+    let arrListCustomer = [];
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1.Add new customer "+"\n"+"2.Display information customer "
+        +"\n"+"3.Edit information customer "+"\n"+"4.Delete customer "+"\n"+"5.Exit "));
+        switch (choose) {
+            case 1 : {
+                addNewCustomer();
+                break;
+            }
+            case 2 : {
+                displayCustomer();
+                break;
+            }
+            case 3 : {
+                editCustomer();
+                break;
+            }
+            case 4 : {
+                deleteCustomer();
+                break;
+            }
+            case 5 : {
+                break;
+            }
+            default : {
+                break;
+            }
+        }
+    }
+    function addNewCustomer() {
+        let cusInfor = [];
+        let name = prompt("Input name: ");
+        let cmnd = prompt("Input cmnd: ");
+        let brith = prompt("Input brithday: ");
+        let email = prompt("Input email: ");
+        let address = prompt("Input address: ");
+        let typeCustomer = prompt("Input typeCustomer: " );
+        let discount = prompt("Input discount: ");
+        let quantityIncluded = prompt("Input quantityIncluded: ");
+        let rentDays = prompt("Input rentDays: ");
+        let typeService = prompt("Input typeService: ");
+        alert("Price list : " + "\n" + "Villa 500$/ 1 ngày" + "\n" + "House 300$/1 ngày" + "\n" + "Room: 100$/1 ngày");
+        let typeRoom = prompt("Input typeRoom: ");
+        let priceRoom = prompt("Input priceRoom : ");
+
+        cusInfor.push(name);
+        cusInfor.push(cmnd);
+        cusInfor.push(brith);
+        cusInfor.push(email);
+        cusInfor.push(address);
+        cusInfor.push(typeCustomer);
+        cusInfor.push(discount);
+        cusInfor.push(quantityIncluded);
+        cusInfor.push(rentDays);
+        cusInfor.push(typeService);
+        cusInfor.push(typeRoom);
+        cusInfor.push(priceRoom);
+
+        arrListCustomer.push(cusInfor);
+        alert("add to finish");
+        displayMainMenu();
+    }
+    function displayCustomer() {
+        let temp = "";
+        for (let i=0 ; i<arrListCustomer.length ; i++){
+            temp +=i+".Name : "+ arrListCustomer[i][0]+"\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("1.Name : " + arrListCustomer[chooseDisplay][0] + "\n" +
+            "2.Cmnd : " + arrListCustomer[chooseDisplay][1] + "\n" +
+            "3.birthday : " + arrListCustomer[chooseDisplay][2] + "\n" +
+            "4.email : " + arrListCustomer[chooseDisplay][3] + "\n" +
+            "5.address : " + arrListCustomer[chooseDisplay][4] + "\n" +
+            "6.typeCustomer : " + arrListCustomer[chooseDisplay][5] + "\n" +
+            "7.typeService : " + arrListCustomer[chooseDisplay][6] + "\n"+
+            "8.discount : " + arrListCustomer[chooseDisplay][7] + "\n"+
+            "9.typeRoom : " + arrListCustomer[chooseDisplay][8] + "\n"+
+            "10.rentDay : " + arrListCustomer[chooseDisplay][9] + "\n"+
+            "11.quantityIncluded : " + arrListCustomer[chooseDisplay][10] + "\n"+
+            "12.priceRoom : " + arrListCustomer[chooseDisplay][11]);
+        displayMainMenu();
+    }
+    function editCustomer() {
+        let temp = "";
+        for (let i=0 ; i<arrListCustomer.length ; i++){
+            temp +=i+".Name : "+ arrListCustomer[i][0]+"\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        let chooseEdit = parseInt(prompt("1.Name : " + arrListCustomer[chooseDisplay][0] + "\n" +
+            "2.Cmnd : " + arrListCustomer[chooseDisplay][1] + "\n" +
+            "3.birthday : " + arrListCustomer[chooseDisplay][2] + "\n" +
+            "4.email : " + arrListCustomer[chooseDisplay][3] + "\n" +
+            "5.address : " + arrListCustomer[chooseDisplay][4] + "\n" +
+            "6.typeCustomer : " + arrListCustomer[chooseDisplay][5] + "\n" +
+            "7.typeService : " + arrListCustomer[chooseDisplay][6] + "\n"+
+            "8.discount : " + arrListCustomer[chooseDisplay][7] + "\n"+
+            "9.typeRoom : " + arrListCustomer[chooseDisplay][8] + "\n"+
+            "10.rentDay : " + arrListCustomer[chooseDisplay][9] + "\n"+
+            "11.quantityIncluded : " + arrListCustomer[chooseDisplay][10] + "\n"+
+            "12.priceRoom : " + arrListCustomer[chooseDisplay][11]));
+        switch (chooseEdit) {
+            case 1: {
+                arrListCustomer[chooseDisplay][0] = prompt("Enter name :");
+                break;
+            }
+            case 2: {
+                arrListCustomer[chooseDisplay][1] = prompt("Enter cmnd :");
+                break;
+            }
+            case 3: {
+                arrListCustomer[chooseDisplay][2] = prompt("Enter brith :");
+                break;
+            }
+            case 4: {
+                arrListCustomer[chooseDisplay][3] = prompt("Enter email :");
+                break;
+            }
+            case 5: {
+                arrListCustomer[chooseDisplay][4] = prompt("Enter address :");
+                break;
+            }
+            case 6: {
+                arrListCustomer[chooseDisplay][5] = prompt("Enter typeCustomer :");
+                break;
+            }
+            case 7: {
+                arrListCustomer[chooseDisplay][6] = prompt("Enter typeService :");
+                break;
+            }
+            case 8: {
+                arrListCustomer[chooseDisplay][7] = prompt("Enter discount :");
+                break;
+            }
+            case 9: {
+                arrListCustomer[chooseDisplay][8] = prompt("Enter typeRoom :");
+                break;
+            }
+            case 10: {
+                arrListCustomer[chooseDisplay][9] = prompt("Enter rentDays :");
+                break;
+            }
+            case 11: {
+                arrListCustomer[chooseDisplay][10] = prompt("Enter quantityIncluded :");
+                break;
+            }
+            default: {
+                alert("Failed");
+                break;
+            }
+        }
+        editCustomer();
+    }
+    function deleteCustomer() {
+        let temp = "";
+        for (let i=0 ; i<arrListCustomer.length ; i++){
+            temp +=i+".Name : "+ arrListCustomer[i][0]+"\n";
+        }
+        let chooseDelete = parseInt(prompt(temp));
+        let check = parseInt(prompt("Are you want delete customer ? "+"\n1.Yes    2.No"));
+        if (check===1){
+            arrListCustomer.splice(chooseDelete,1);
+            alert("Delete finish");
+        }else {
+            alert("Cancel");
+        }
+        displayMainMenu();
+
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>

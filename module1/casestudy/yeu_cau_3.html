@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeu cau 3</title>
+</head>
+<body>
+<script>
+    let check = false;
+    let cmnd;
+    let brith;
+    let email;
+    let address;
+    let typeCustomer;
+    let discount;
+    let quantityIncluded;
+    let rentDays;
+    let tempName ="";
+    let name = prompt("Input name: ");
+    name = name.trim().toLowerCase();
+    for (let i =0 ; i < name.length ; i++){
+        if (name.charAt(i)===" "&&name.charAt(i+1)===" "){
+            continue;
+        }
+        if (i===0 || name.charAt(i-1)===" "){
+            tempName = name.charAt(i).toUpperCase();
+            continue;
+        }
+        tempName += name.charAt(i);
+    }
+    name = tempName;
+    do {
+        cmnd = prompt("Input cmnd: ");
+        if(!isNaN(cmnd)){
+            cmnd = Number.parseFloat(cmnd);
+        }
+        if (!Number.isInteger(cmnd)){
+            alert("cmnd wrong !");
+            continue;
+        }
+        if (cmnd < 100000000 || cmnd > 999999999){
+            alert("cmnd wrong !");
+            continue;
+        }
+        check = true;
+    } while (!check)
+    check = false;
+    do {
+        brith = prompt("Input brithday: ");
+        if (brith.charAt(2)==="/" && brith.charAt(5)==="/"){
+            let day = brith.substring(0,2);
+            let month = brith.substring(3,5);
+            let year = brith.substring(6,10);
+            if (!isNaN(day)&&!isNaN(month)&&!isNaN(year)){
+                day = Number.parseFloat(day);
+                month = Number.parseFloat(month);
+                year = Number.parseFloat(year);
+                if (Number.isInteger(day)&&Number.isInteger(month)&&Number.isInteger(year)){
+                    if (day<32&&month<13&&year>1930){
+                        check = true;
+                    }
+                }
+            }
+        }
+        if (!check){
+            alert("brithday wrong !");
+        }
+    } while (!check);
+    do {
+        let countAt = 0;
+        let countDoc = 0;
+        email = prompt("Input email: ");
+        for (let i = 0 ; i < email.length ;i++){
+            if(email.charAt(i)==="@"){
+                countAt++;
+                for (let j = 0 ; j < email.length ; j++){
+                    if (email.charAt(j)==="."){
+                        countDoc++;
+                    }
+                }
+            }
+        }
+        if (countAt !==1 || countDoc < 1 || email.charAt(0)==="@"){
+            alert("email wrong !")
+        }else {
+            check = true;
+        }
+    } while (!check)
+    check = false;
+    address = prompt("Input address: ");
+    let tempAddress = "";
+    address = address.trim().toLowerCase();
+    for (let i = 0 ; i < address.length ; i++){
+        if (i===0 || address.charAt(i-1)===" "){
+            tempAddress = address.charAt(i).toUpperCase();
+            continue;
+        }
+        tempAddress += address.charAt(i);
+    }
+    address = tempAddress;
+    typeCustomer = prompt("Input typeCustomer: " );
+    let tempCustomer = "";
+    typeCustomer = typeCustomer.trim().toLowerCase();
+    for (let i = 0 ; i< typeCustomer.length ; i++){
+        if (i===0 || typeCustomer.charAt(i-1)===" "){
+            tempCustomer = typeCustomer.charAt().toUpperCase();
+            continue;
+        }
+        tempCustomer += typeCustomer.charAt(i);
+    }
+    typeCustomer = tempCustomer;
+    discount = prompt("Input discount: ");
+    do {
+        quantityIncluded = prompt("Input quantityIncluded: ");
+        if (!isNaN(quantityIncluded)){
+            quantityIncluded = Number.parseFloat(quantityIncluded);
+            if (Number.isInteger(quantityIncluded)&&quantityIncluded >0){
+                check = true;
+            }
+        }
+        if (!check){
+            alert("quantityIncluded wrong !")
+        }
+    } while (!check)
+    check = false;
+    do {
+        rentDays = prompt("Input rentDays: ");
+        if (!isNaN(rentDays)){
+            rentDays = Number.parseFloat(rentDays);
+            if (Number.isInteger(rentDays)&&rentDays > 0){
+                check = true;
+            }
+        }
+        if (!check){
+            alert("rentDays wrong !");
+        }
+    } while (!check)
+    check = false;
+    let typeService = prompt("Input typeService: ");
+    alert("Price list : " + "\n" + "Villa 500$/ 1 ngày" + "\n" + "House 300$/1 ngày" + "\n" + "Room: 100$/1 ngày");
+    let typeRoom = prompt("Input typeRoom: ");
+    let priceRoom = prompt("Input priceRoom : ");
+    let totalPay = priceRoom * parseFloat(rentDays) * (1 - parseFloat(discount)/100);
+    alert("Name : " + name + "\n" +
+        "Cmnd : " + cmnd + "\n" +
+        "birthday : " + brith + "\n" +
+        "email : " + email + "\n" +
+        "address : " + address + "\n" +
+        "typeCustomer : " + typeCustomer + "\n" +
+        "typeService : " + typeService + "\n"+
+        "quantityIncluded : " + quantityIncluded + "\n"+
+        "totalPay : " + totalPay);
+
+</script>
+</body>
+</html>
