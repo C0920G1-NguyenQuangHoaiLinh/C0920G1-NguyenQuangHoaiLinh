@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeu cau 6</title>
+</head>
+<body>
+<script>
+    class Customer {
+        constructor(id, name, phone, address, email) {
+            this.id = id;
+            this.name = name;
+            this.phone = phone;
+            this.address = address;
+            this.email = email;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setPhone(phone) {
+            this.phone = phone;
+        }
+
+        setAddress(address) {
+            this.address = address;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getPhone() {
+            return this.phone;
+        }
+
+        getAddress() {
+            return this.address;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+    }
+
+    let arrListCustomer = [];
+    function addNewCustomer(){
+        let id = prompt("id");
+        let name = prompt("name");
+        let phone = prompt("phone");
+        let address = prompt("address");
+        let email = prompt("email");
+
+        let customer = new Customer(id, name, phone, address, email);
+        arrListCustomer.push(customer);
+
+        alert("add to finish");
+        displayCustomer();
+    }
+    function displayCustomer() {
+        let temp = "";
+        for (let i=0 ; i<arrListCustomer.length ; i++){
+            temp +=i+".Name : "+ arrListCustomer[i].getName()+"\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        if (chooseDisplay >= 0 && chooseDisplay < arrListCustomer.length){
+            alert("1.Id : " + arrListCustomer[chooseDisplay].getId() + "\n" +
+                "2.Name : " + arrListCustomer[chooseDisplay].getName() + "\n" +
+                "3.NumberPhone : " + arrListCustomer[chooseDisplay].getPhone() + "\n" +
+                "4.Address : " + arrListCustomer[chooseDisplay].getAddress() + "\n" +
+                "5.email : " + arrListCustomer[chooseDisplay].getEmail());
+        }else {
+            displayCustomer();
+        }
+
+        displayMainMenu();
+    }
+
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1.Add new customer "+"\n"+"2.Display information customer "
+            +"\n"+"3.Edit information customer "+"\n"+"4.Delete customer "));
+        switch (choose) {
+            case 1 : {
+                addNewCustomer();
+                break;
+            }
+            case 2 : {
+                displayCustomer();
+                break;
+            }
+            case 3 : {
+                editCustomer();
+                break;
+            }
+            case 4 : {
+                deleteCustomer();
+                break;
+            }
+            default : {
+                break;
+            }
+        }
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>

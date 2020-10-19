@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("nhap do dai mang"));
+    let arr = new Array(n);
+    let k = parseInt(prompt("nhap phan tu k"));
+    let result =[];
+    for (let i = 0; i <= n; i++){
+        arr[i] = parseInt(prompt("nhap phan tu thu " + i));
+        for (let j = 0; j <= n; j++){
+            if ((arr[i] + arr[j]) % k === 0 && arr[i] !== arr[j]){
+                result = [arr[i],arr[j]];
+                console.log(result);
+            }
+        }
+    }
+    console.log(arr);
+</script>
+</body>
+</html>

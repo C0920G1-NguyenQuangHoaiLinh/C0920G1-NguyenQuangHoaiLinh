@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let studentA = parseFloat(prompt("nhap diem cua A"));
+    alert(checkPoint(studentA));
+    function checkPoint(a) {
+        while (true) {
+            if (studentA < 0 || studentA > 100) {
+                studentA = parseFloat(prompt("nhap diem cua A"));
+            } else {
+                break;
+            }
+        }
+        if (studentA <= 48){
+            return studentA;
+        }
+        let temp = studentA % 5;
+        if (temp >= 3) {
+            studentA += (5 - temp);
+            return studentA;
+        } else {
+            return studentA;
+        }
+
+    }
+</script>
+</body>
+</html>

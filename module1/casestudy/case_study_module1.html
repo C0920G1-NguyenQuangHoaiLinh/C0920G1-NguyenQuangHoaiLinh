@@ -195,7 +195,7 @@
                 <td style="border: 2px solid black"><input type="button" value="Delete" onclick="editCustomer3()"></td>
             </tr>
         </table>
-        <input style="margin-top: 5px" type="button" value="Option" onclick="editForm()">
+<!--        <input style="margin-top: 5px" type="button" value="Option" onclick="editForm()">-->
     </div>
 </div>
 
@@ -307,6 +307,14 @@
         }
         if (quantityIncluded < 0) {
             alert("số người đi kèm không đúng");
+            return count--;
+        }
+        if (name.length <= 0){
+            alert("chưa nhập tên");
+            return count--;
+        }
+        if (address.length <= 0){
+            alert("chưa nhập địa chỉ");
             return count--;
         }
 
