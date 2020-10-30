@@ -4,7 +4,7 @@ public class Circle {
     private double radius;
     private String color;
 
-    Circle(){
+    Circle(double radius){
     }
 
     public Circle(double radius, String color){
