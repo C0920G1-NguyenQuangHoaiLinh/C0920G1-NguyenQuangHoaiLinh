@@ -2,6 +2,7 @@ package controller;
 
 import commons.FileUtils;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class MainController {
@@ -16,7 +17,7 @@ public class MainController {
     public static void displayMainMenu() {
         int tuyChon = 0;
         do {
-            System.out.println("1.\t Add New Services\n" +
+            System.out.println("1.\tAdd New Services\n" +
                     "2.\tShow Services\n" +
                     "3.\tAdd New Customer\n" +
                     "4.\tShow Information of Customer\n" +
@@ -105,11 +106,21 @@ public class MainController {
                 case 7:
                     displayMainMenu();
                 case 8:
+                    System.out.println();
+                    System.exit(0);
                     return;
             }
 
         } while (tuyChon >= 1 && tuyChon < 8);
 
+    }
+
+
+
+    private static void showNotDuplicate(String fileName) {
+    }
+
+    private static void showAllService(String fileName) {
     }
 
     private static void addNewServices() {

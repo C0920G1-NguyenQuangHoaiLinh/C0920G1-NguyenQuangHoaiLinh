@@ -5,6 +5,9 @@ public class House extends Services {
     private String moTaTienNghiKhac;
     private int soTang;
 
+    public House() {
+    }
+
     public House(String id, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, int soTang) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;

@@ -1,7 +1,6 @@
 package commons;
 
 public class StringUtils {
-
     public static String concat(String[] content, String s){
         StringBuffer outStr = new StringBuffer(content[0]);
 

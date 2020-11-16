@@ -6,6 +6,9 @@ public class Villa extends Services{
     private double dienTichHoBoi;
     private int soTang;
 
+    public Villa() {
+    }
+
     public Villa(String id, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuChuanPhong, String moTaTienNghiKhac, double dienTichHoBoi, int soTang) {
         super(id, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;

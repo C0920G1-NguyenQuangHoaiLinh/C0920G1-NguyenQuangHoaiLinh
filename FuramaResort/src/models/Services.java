@@ -8,6 +8,9 @@ public abstract class Services {
     public int soLuongNguoiToiDa;
     public String kieuThue;
 
+    public Services() {
+    }
+
     public Services(String id, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue) {
         this.id = id;
         this.tenDichVu = tenDichVu;
