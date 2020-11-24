@@ -2,7 +2,6 @@ package controller;
 
 import commons.*;
 import models.*;
-
 import java.util.*;
 
 public class MainController {
@@ -27,7 +26,6 @@ public class MainController {
                     "5.\tAdd New Booking\n" +
                     "6.\tShow Information of Employee\n" +
                     "7.\tExit\n");
-
             System.out.println("Nhập số thứ tự của chức năng muốn chọn 1 - 7");
             tuyChon = scanner.nextInt();
             switch (tuyChon) {
@@ -58,7 +56,6 @@ public class MainController {
     private static Map<Integer, Employee> readEmployee(String fileName) {
         FileUtils.setPath(fileName);
         List<String> strReadEmployee = FileUtils.readFile();
-//        List<Employee> listEmployee = new ArrayList<>();
         Map<Integer, Employee> mapEmployee = new HashMap<Integer, Employee>();
 
         String[] temp = null;
@@ -71,7 +68,6 @@ public class MainController {
             employee.setTuoiNhanVien(temp[1]);
             employee.setDiaChiNhanVien(temp[2]);
 
-//            listEmployee.add(employee);
             mapEmployee.put(i, employee);
             i++;
         }
@@ -113,7 +109,6 @@ public class MainController {
 
         FileUtils.setPath("Booking");
         FileUtils.writeFile(new String[]{customer.toString()});
-
     }
 
     private static List<Customer> readCustomer(String fileName) {
@@ -264,9 +259,7 @@ public class MainController {
             }
 
         } while (tuyChon >= 1 && tuyChon < 8);
-
     }
-
 
     private static void showNotDuplicate(String fileName) {
         TreeSet<Services> treeSetServices = new TreeSet<>();
@@ -330,59 +323,6 @@ public class MainController {
             System.out.println((i + 1) + ". ");
             services.showInfor();
         }
-//        if (fileName.equals(villa)) {
-//            File csvVilla = new File("src/data/villa.csv");
-//            String line = null;
-//            try {
-//                BufferedReader bufferedReader = new BufferedReader(new FileReader(csvVilla));
-//                while ((line = bufferedReader.readLine()) != null) {
-//                    String[] arrVilla = line.split(",");
-//                    System.out.println(arrVilla[0] + arrVilla[1] + arrVilla[2] + arrVilla[3] + arrVilla[4] + arrVilla[5]
-//                            + arrVilla[6] + arrVilla[7] + arrVilla[8] + arrVilla[9]);
-//                }
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//        }
-//
-//        if (fileName.equals(house)) {
-//            File csvHouse = new File("src/data/house.csv");
-//            String line = null;
-//            try {
-//                BufferedReader bufferedReader = new BufferedReader(new FileReader(csvHouse));
-//                while ((line = bufferedReader.readLine()) != null) {
-//                    String[] arrHouse = line.split(",");
-//                    System.out.println(arrHouse[0] + arrHouse[1] + arrHouse[2] + arrHouse[3] + arrHouse[4] + arrHouse[5]
-//                            + arrHouse[6] + arrHouse[7] + arrHouse[8]);
-//                }
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//        }
-//
-//        if (fileName.equals(room)) {
-//            File csvRoom = new File("src/data/room.csv");
-//            String line = null;
-//            try {
-//                BufferedReader bufferedReader = new BufferedReader(new FileReader(csvRoom));
-//                while ((line = bufferedReader.readLine()) != null) {
-//                    String[] arrRoom = line.split(",");
-//                    System.out.println(arrRoom[0] + arrRoom[1] + arrRoom[2] + arrRoom[3] + arrRoom[4] + arrRoom[5]
-//                            + arrRoom[6] + arrRoom[7] + arrRoom[8]);
-//                }
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//        }
     }
 
     private static void addNewServices() {
