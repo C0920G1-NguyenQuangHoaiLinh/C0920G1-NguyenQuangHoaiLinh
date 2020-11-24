@@ -1,5 +1,7 @@
 package commons;
 
+import models.Customer;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,4 +47,5 @@ public class FileUtils {
 
         FileUtils.path = path.toString();
     }
+
 }
