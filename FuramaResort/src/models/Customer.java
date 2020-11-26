@@ -14,7 +14,8 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String hoTen, String ngaySinh, String gioiTinh, String cmnd, String sdt, String email, String loaiKhach, String diaChi) {
+    public Customer(String hoTen, String ngaySinh, String gioiTinh, String cmnd, String sdt, String email,
+                    String loaiKhach, String diaChi) {
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
