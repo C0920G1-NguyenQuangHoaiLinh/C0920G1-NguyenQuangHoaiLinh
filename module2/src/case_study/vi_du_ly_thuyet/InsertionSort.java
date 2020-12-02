@@ -1,4 +1,4 @@
-package _13_sorting_algorithm;
+package case_study.vi_du_ly_thuyet;
 
 import _14_thuat_toan_sap_xep.bai_tap.minh_hoa_thuat_sap_xep_chen.InsertSort;
 

@@ -1,4 +1,4 @@
-package _13_sorting_algorithm;
+package case_study.vi_du_ly_thuyet;
 
 import java.util.Arrays;
 

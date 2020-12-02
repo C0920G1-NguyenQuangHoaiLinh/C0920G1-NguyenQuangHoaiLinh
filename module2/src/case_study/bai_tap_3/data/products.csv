@@ -1,0 +1,7 @@
+0, SP00011, ip, 500, 10, apple, 300, dn, 30
+0, SP00022, ip, 500, 10, apple, 300, dn, 30
+0, SP00033, ss, 500, 10, samsung, 300, dn, 30
+0, SP00099, sony, 200, 10, hq, 100, hq
+0, SP00074, cay, 100, 100, dn, 100, dn
+Product : 0, SP00054, sp, 100, 100, vn, ExportProduct{priceExport='100',  countryImport='vn'}
+
