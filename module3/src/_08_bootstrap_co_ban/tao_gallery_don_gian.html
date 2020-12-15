@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <title>Title</title>
+    <style>
+        .desc {
+            text-align: center;
+            padding: 15px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery {
+            text-align: center;
+            padding: 0px;
+            border: 1px solid #cccccc;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div>
+        <h3>Responsive Image Gallery</h3>
+        <h6>Resize the browser window to see the effect.</h6>
+    </div>
+    <div class="row container-fluid">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="gallery">
+                <a target="_blank" href="img_fjords.jpg">
+                    <img src="img_fjords.jpg" height="400" width="600"/>
+                </a>
+                <div class="desc">Add a description of the image here</div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="gallery">
+                <a target="_blank" href="img_forest.jpg">
+                    <img src="img_forest.jpg" height="400" width="600"/>
+                </a>
+                <div class="desc">Add a description of the image here</div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="gallery">
+                <a target="_blank" href="img_mountains.jpg">
+                    <img src="img_mountains.jpg" height="400" width="600"/>
+                </a>
+                <div class="desc">Add a description of the image here</div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="gallery">
+                <a target="_blank" href="img_lights.jpg">
+                    <img src="img_lights.jpg" height="400" width="600"/>
+                </a>
+                <div class="desc">Add a description of the image here</div>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 5px">
+        <p>
+            This example use media queries to re-arrange the images on different screen sizes: for screens larger than
+            700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images
+            side by side. For screens smaller than 500px, the images will stack vertically (100%).
+        </p>
+    </div>
+</div>
+</body>
+</html>
