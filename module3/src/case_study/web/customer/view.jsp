@@ -47,7 +47,7 @@
             margin-left: 0;
         }
         .radius {
-            border-radius: 2px;
+            border-radius: 1%;
         }
     </style>
 </head>
@@ -115,7 +115,7 @@
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark radius">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark radius" style="background-color: #0c5460">
         <a class="navbar-brand mr-5" href="http://localhost:8080/" style="margin-left: 100px">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,7 +123,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active mr-5">
+                <li class="nav-item mr-5">
                     <a class="nav-link" href="#">Employee</a>
                 </li>
                 <li class="nav-item mr-5">
@@ -144,25 +144,22 @@
         </div>
     </nav>
     <div class="row">
-        <div class="col-sm-3 radius" style="padding-right: 0; padding-left: 0; background-color: #0c5460">
-            <h2 style="color: white;text-align: center">Welcome to Furama</h2>
+        <div class="col-sm-3" style="padding-right: 0; padding-left: 0; background-color: #20c997;color: black; text-align: center">
+            <h2>Welcome to Furama</h2>
             <div><img src="left.jpg"></div>
-            <h3 style="color: white; text-align: center">List Menu</h3>
+            <h3>List Function</h3>
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
-                    <a class="nav-link btn btn-primary" data-toggle="modal" data-target="#myModal">Create Customer</a>
+                    <a class="btn btn-outline-primary" style="border: 0 solid" data-toggle="modal" data-target="#myModal" href="">Create Customer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-success" data-toggle="modal" data-target="#myModal2">Edit Customer</a>
+                    <a class="btn btn-outline-primary" style="border: 0 solid" data-toggle="modal" data-target="#myModal2" href="">Edit Customer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-warning" data-toggle="modal" data-target="#myModal4">Search Customer</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled btn btn-danger" href="#">Vô hiệu hóa</a>
+                    <a class="btn btn-outline-primary" style="border: 0 solid" data-toggle="modal" data-target="#myModal4" href="">Search Customer</a>
                 </li>
             </ul>
-            <div><img src="left2.jpg" style="height: 11.3rem"></div>
+            <div><img src="left2.jpg"></div>
         </div>
         <div class="col-sm-9 radius" style="padding-left: 0; padding-right: 0;background-color: gainsboro">
             <div>
@@ -194,7 +191,7 @@
                             <td><c:out value="${customer.customer_email}"/></td>
                             <td>
                                 <c:forEach var="typeCustomer" items="${customerTypeList}">
-                                    <c:if test="${typeCustomer.getCustomer_type_id().equals(customer.getCustomer_type_id())}">
+                                    <c:if test="${customer.getCustomer_type_id().equals(typeCustomer.getCustomer_type_id())}">
                                         <c:out value="${typeCustomer.getCustomer_type_name()}"/></c:if>
                                 </c:forEach>
                             </td>
@@ -293,7 +290,7 @@ GDS-Codes: Amadeus-WWDADFUR, Apollo/Galileo-WW16236,&nbsp;</span><span style="co
     </footer>
 </div>
 <%--modal edit & delete--%>
-<div class="modal" tabindex="-1" role="dialog" id="myModal">
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form method="post" action="customer?action=create">
@@ -304,6 +301,11 @@ GDS-Codes: Amadeus-WWDADFUR, Apollo/Galileo-WW16236,&nbsp;</span><span style="co
                     </button>
                 </div>
                 <div class="modal-body">
+                    <div class="form-group">
+                        <label>Customer Id</label>
+                        <input type="text" placeholder="Enter Id" class="form-control" name="id"
+                               id="id"/>
+                    </div>
                     <div class="form-group">
                         <label>Customer Name</label>
                         <input type="text" placeholder="Enter Name" class="form-control" name="customer_name"
@@ -355,7 +357,7 @@ GDS-Codes: Amadeus-WWDADFUR, Apollo/Galileo-WW16236,&nbsp;</span><span style="co
     </div>
 </div>
 
-<div class="modal" tabindex="-1" role="dialog" id="myModal2">
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal2">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form method="post" action="customer?action=edit">
@@ -369,7 +371,7 @@ GDS-Codes: Amadeus-WWDADFUR, Apollo/Galileo-WW16236,&nbsp;</span><span style="co
                     <div class="form-group">
                         <label>Customer Id</label>
                         <input type="text" placeholder="Enter Id" class="form-control" name="id"
-                               id="id"/>
+                               id="id2"/>
                     </div>
                     <div class="form-group">
                         <label>Customer Name</label>
@@ -423,7 +425,7 @@ GDS-Codes: Amadeus-WWDADFUR, Apollo/Galileo-WW16236,&nbsp;</span><span style="co
 </div>
 <%--                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal3">--%>
 <%--                        Delete Customer</button>--%>
-<div class="modal" tabindex="-1" role="dialog" id="myModal3">
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal3">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -448,7 +450,7 @@ GDS-Codes: Amadeus-WWDADFUR, Apollo/Galileo-WW16236,&nbsp;</span><span style="co
 </form>
 
 <%--search by name customer--%>
-<div class="modal" tabindex="-1" role="dialog" id="myModal4">
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal4">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form method="post" action="customer?action=search">
@@ -498,6 +500,7 @@ GDS-Codes: Amadeus-WWDADFUR, Apollo/Galileo-WW16236,&nbsp;</span><span style="co
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#tableCustomer').dataTable({

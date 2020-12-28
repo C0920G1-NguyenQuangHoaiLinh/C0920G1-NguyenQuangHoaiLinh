@@ -54,7 +54,7 @@
             margin-left: 0;
         }
         .radius {
-            border-radius: 2px;
+            border-radius: 1%;
         }
     </style>
 </head>
@@ -139,7 +139,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active mr-5">
+                <li class="nav-item mr-5">
                     <a class="nav-link" href="#">Employee</a>
                 </li>
                 <li class="nav-item mr-5">
@@ -160,24 +160,21 @@
         </div>
     </nav>
     <div class="row">
-        <div class="col-sm-3 radius" style="padding-right: 0; padding-left: 0; background-color: #0c5460">
-            <h2 style="color: white;text-align: center">Welcome to Furama</h2>
+        <div class="col-sm-3" style="padding-right: 0; padding-left: 0; background-color: #20c997;color: black; text-align: center">
+            <h2>Welcome to Furama</h2>
             <div><img src="left.jpg"></div>
-            <h3 style="color: white; text-align: center">List Menu : </h3>
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link btn btn-primary" href="#">Kích hoạt</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-success" href="#">Liên kết 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-warning" href="#">Liên kết 2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled btn btn-danger" href="#">Vô hiệu hóa</a>
-                </li>
-            </ul>
+<%--            <h3>List Function</h3>--%>
+<%--            <ul class="nav nav-pills flex-column">--%>
+<%--                <li class="nav-item">--%>
+<%--                    <a href="#">Kích hoạt</a>--%>
+<%--                </li>--%>
+<%--                <li class="nav-item">--%>
+<%--                    <a href="#">Liên kết 1</a>--%>
+<%--                </li>--%>
+<%--                <li class="nav-item">--%>
+<%--                    <a href="#">Liên kết 2</a>--%>
+<%--                </li>--%>
+<%--            </ul>--%>
             <div><img src="left2.jpg" style="height: 11.3rem"></div>
 <%--            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">--%>
 <%--                <div class="card-body">--%>

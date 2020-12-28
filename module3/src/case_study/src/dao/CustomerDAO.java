@@ -10,8 +10,8 @@ public class CustomerDAO implements ICustomerDAO {
 
     DatabaseDAO databaseDAO = new DatabaseDAO();
 
-    private static final String INSERT_CUSTOMER_SQL = "insert into customer(customer_name, customer_birth, customer_gender, customer_id_card," +
-            "customer_phone, customer_email,customer_type_id,customer_address) values (?,?,?,?,?,?,?,?)";
+    private static final String INSERT_CUSTOMER_SQL = "insert into customer(id ,customer_name, customer_birth, customer_gender, customer_id_card," +
+            "customer_phone, customer_email,customer_type_id,customer_address) values (?,?,?,?,?,?,?,?,?)";
     private static final String SELECT_ALL_CUSTOMERS = "select * from customer";
     private static final String DELETE_CUSTOMER_SQL = "delete from customer where id = ?";
     private static final String EDIT_CUSTOMER_SQL = "update customer set customer_name = ?, customer_birth= ?, customer_gender= ?," +
@@ -25,14 +25,15 @@ public class CustomerDAO implements ICustomerDAO {
     public String addNewCustomer(Customer customer) {
         try {
             PreparedStatement preparedStatement = databaseDAO.getConnection().prepareStatement(INSERT_CUSTOMER_SQL);
-            preparedStatement.setString(1,customer.getCustomer_name());
-            preparedStatement.setString(2,customer.getCustomer_birth());
-            preparedStatement.setString(3,customer.getCustomer_gender());
-            preparedStatement.setString(4,customer.getCustomer_id_card());
-            preparedStatement.setString(5,customer.getCustomer_phone());
-            preparedStatement.setString(6,customer.getCustomer_email());
-            preparedStatement.setString(7,customer.getCustomer_type_id());
-            preparedStatement.setString(8,customer.getCustomer_address());
+            preparedStatement.setString(1,customer.getId());
+            preparedStatement.setString(2,customer.getCustomer_name());
+            preparedStatement.setString(3,customer.getCustomer_birth());
+            preparedStatement.setString(4,customer.getCustomer_gender());
+            preparedStatement.setString(5,customer.getCustomer_id_card());
+            preparedStatement.setString(6,customer.getCustomer_phone());
+            preparedStatement.setString(7,customer.getCustomer_email());
+            preparedStatement.setString(8,customer.getCustomer_type_id());
+            preparedStatement.setString(9,customer.getCustomer_address());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

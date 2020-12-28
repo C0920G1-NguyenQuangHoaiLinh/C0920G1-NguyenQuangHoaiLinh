@@ -52,6 +52,12 @@ public class CustomerServlet extends HttpServlet {
             switch (action) {
                 case "create":
                     showNewForm(request, response);
+                case "edit":
+                    listCustomer(request, response);
+                case "delete":
+                    listCustomer(request, response);
+                case "search":
+                    listCustomer(request, response);
                 default:
                     listCustomer(request, response);
                     break;
@@ -82,6 +88,7 @@ public class CustomerServlet extends HttpServlet {
 
 
     private void addNewCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id =request.getParameter("id");
         String customer_name =request.getParameter("customer_name");
         String customer_birth =request.getParameter("customer_birth");
         String customer_gender =request.getParameter("customer_gender");
@@ -90,13 +97,18 @@ public class CustomerServlet extends HttpServlet {
         String customer_email =request.getParameter("customer_email");
         String customer_type_id =request.getParameter("customer_type_id");
         String customer_address =request.getParameter("customer_address");
-        Customer customer = new Customer(customer_name,customer_birth,customer_gender,customer_id_card,customer_phone,
+        Customer customer = new Customer(id,customer_name,customer_birth,customer_gender,customer_id_card,customer_phone,
                 customer_email,customer_type_id,customer_address);
         String message = customerBO.addNewCustomer(customer);
         request.setAttribute("message", message);
+        if (!message.equals("Create successfully")){
+            request.setAttribute("customer",customer);
+        }
 
         List<Customer> listCustomer = customerBO.findAllCustomer();
         request.setAttribute("listCustomer", listCustomer);
+        List<CustomerType> customerTypeList = typeCustomerBO.findAllTypeCustomer();
+        request.setAttribute("customerTypeList", customerTypeList);
 //        List<Customer> listCustomer = this.customerBO.findAllCustomer();
 //        listCustomer.add(newCustomer);
 //        request.setAttribute("listCustomer", listCustomer);
@@ -119,9 +131,14 @@ public class CustomerServlet extends HttpServlet {
                 customer_email,customer_type_id,customer_address);
         String message = customerBO.editCustomer(id, customer);
         request.setAttribute("message", message);
+        if (!message.equals("Edit successfully")){
+            request.setAttribute("customer",customer);
+        }
 
         List<Customer> listCustomer = customerBO.findAllCustomer();
         request.setAttribute("listCustomer", listCustomer);
+        List<CustomerType> customerTypeList = typeCustomerBO.findAllTypeCustomer();
+        request.setAttribute("customerTypeList", customerTypeList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("customer/view.jsp");
         dispatcher.forward(request,response);
     }
@@ -133,6 +150,8 @@ public class CustomerServlet extends HttpServlet {
 
         List<Customer> listCustomer = customerBO.findAllCustomer();
         request.setAttribute("listCustomer", listCustomer);
+        List<CustomerType> customerTypeList = typeCustomerBO.findAllTypeCustomer();
+        request.setAttribute("customerTypeList", customerTypeList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("customer/view.jsp");
         dispatcher.forward(request,response);
     }
@@ -141,6 +160,8 @@ public class CustomerServlet extends HttpServlet {
         String customer_name = request.getParameter("customer_name");
         List<Customer> listCustomer = customerBO.searchCustomer(customer_name);
         request.setAttribute("listCustomer", listCustomer);
+        List<CustomerType> customerTypeList = typeCustomerBO.findAllTypeCustomer();
+        request.setAttribute("customerTypeList", customerTypeList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("customer/view.jsp");
         dispatcher.forward(request,response);
     }
