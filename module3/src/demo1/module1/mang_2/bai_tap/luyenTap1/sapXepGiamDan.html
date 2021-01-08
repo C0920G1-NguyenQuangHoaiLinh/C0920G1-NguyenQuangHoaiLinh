@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<h1 style="color: red" id="xuatKetQua"></h1>
+<script>
+    let mangNhapVao = new Array();
+    for (let i=0;i<10;i++){
+        let nhapSo = parseInt(prompt("Nhập số nguyên bất kỳ:"));
+        mangNhapVao.push(nhapSo);
+    }
+    // mangNhapVao.sort(function (a,b){return b - a});
+    let bienTam;
+    for (let i=0;i<mangNhapVao.length;i++){
+        for (let j=i+1;j<mangNhapVao.length;j++){
+            if (mangNhapVao[j]>mangNhapVao[i]){
+                bienTam = mangNhapVao[i];
+                mangNhapVao[i] = mangNhapVao[j];
+                mangNhapVao[j] = bienTam;
+            }
+        }
+    }
+    document.getElementById("xuatKetQua").innerHTML="Vị trí các phần tử của mảng sau khi sắp xếp theo thứ tự giảm dần là : " + mangNhapVao.join("_");
+</script>
+</body>
+</html>

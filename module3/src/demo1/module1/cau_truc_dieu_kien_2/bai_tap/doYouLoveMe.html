@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do You Love Me ?</title>
+</head>
+<body>
+<h2 style="color: red">Do You Love Me?</h2>
+    <form method="post" >
+        <input style="color: deeppink;background: blueviolet" type="button" value="Yes" onclick="alert('<3');">
+        <input style="color: yellow;background: black" type="button" onmouseover="move()" value="No" id="buttonNo"  >
+    </form>
+    <script>
+        function move() {
+            let element = document.getElementById('buttonNo');
+                element.style.position = 'relative';
+            let x = parseInt(Math.random() * 555);
+            let y = parseInt(Math.random() * 555);
+            document.getElementById("buttonNo").style.left = x + "px";
+            document.getElementById("buttonNo").style.top = y + "px";
+        }
+    </script>
+</body>
+</html>

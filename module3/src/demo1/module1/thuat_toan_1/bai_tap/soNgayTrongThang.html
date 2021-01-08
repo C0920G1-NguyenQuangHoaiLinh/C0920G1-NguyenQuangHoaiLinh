@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let nhapThangVaNam;
+    let regexDate = /^(([0][1-9])|1[0-2])\/([0-9]{4})$/;
+    let check = true;
+
+    do {
+        nhapThangVaNam = prompt("Nhập tháng bất kỳ của năm bất kỳ cần xem số ngày :" + '\nTheo định dạng : MM/YYYY');
+        if (nhapThangVaNam === null){
+            check = false;
+            alert("Bạn đã nhấn nút Hủy nên sẽ thoát chương trình ! Bye bye !");
+            break;
+        }
+        else if (!regexDate.test(nhapThangVaNam)) {
+            alert('Bạn nhập thông tin không đúng định dạng !' + '\nĐề nghị nhập lại theo định dạng : MM/YYYY !');
+        }else break;
+    } while (1);
+
+    if (check){
+        kiemTraSoNgayTrongThang(nhapThangVaNam);
+    }
+
+    function kiemTraSoNgayTrongThang(thangVaNam) {
+        let thang = thangVaNam.slice(0,2);
+        let nam = parseInt(thangVaNam.slice(3));
+        switch (thang) {
+            case '02':
+                if (nam % 400 === 0 || nam % 4 === 0 && nam % 100 !== 0) {
+                    return document.write("Năm " + nam + " là năm nhuận nên tháng 2 có 29 ngày.");
+                } else return document.write("Năm " + nam + " là năm không nhuận nên tháng 2 có 28 ngày.");
+            case '01':
+            case '03':
+            case '05':
+            case '07':
+            case '08':
+            case '10':
+            case '12':
+                return document.write("Tháng " + thang + "/" + nam + " có 31 ngày.");
+            case '04':
+            case '06':
+            case '09':
+            case '11':
+                return document.write("Tháng " + thang + "/" + nam + " có 30 ngày.");
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="thiModule3:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/thiModule3_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="thiModule3/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="thiModule3" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jstl-impl-1.2" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.17" />
+          <element id="library" level="project" name="jsp-api-2.1-6.0.2" />
+          <element id="library" level="project" name="jstl-api-1.2" />
+          <element id="library" level="project" name="servlet-api-2.5-6.0.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

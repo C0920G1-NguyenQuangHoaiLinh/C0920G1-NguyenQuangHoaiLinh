@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let doiSo1 = parseFloat(prompt("Nhập số thứ nhất :"));
+        let doiSo2 = parseFloat(prompt("Nhập số thứ hai :"));
+        alert(nhanDoiSo(doiSo1,doiSo2));
+        function nhanDoiSo(num1,num2) {
+            if (num1>num2){
+                return "Số thứ nhất lớn hơn số thứ hai.";
+            }
+            else {
+                let tong =  num1 + num2;
+                return "Tổng của 2 đối số nhận vào " + num1 + " và " + num2 + " là : " + tong;
+            }
+        }
+    </script>
+</body>
+</html>

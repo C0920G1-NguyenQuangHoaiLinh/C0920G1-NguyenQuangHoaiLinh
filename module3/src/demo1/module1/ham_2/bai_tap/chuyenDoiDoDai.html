@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi độ dài</title>
+</head>
+<body>
+    <script>
+        let feet = parseFloat(prompt("Nhập độ dài đơn vị feet :"));
+        changeFeetToMeter(feet);
+        function changeFeetToMeter(f){
+            let result = 0.305 * f;
+            return f + " feet = " + result + " mét." + "<br>";
+        }
+        document.write(changeFeetToMeter(feet));
+
+        let meter = parseFloat(prompt("Nhập độ dài đơn vị mét :"));
+        changeMeterToFeet(meter);
+        function changeMeterToFeet(m){
+            let result = 3.279 * m;
+            return m + " mét = " + result + " feet.";
+        }
+        document.write(changeMeterToFeet(meter));
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<h2>Font size editor</h2>
+
+<div>
+  <table>
+    <label>Enter font size (px) : </label>
+    <input class="form-control" type="number" [value]="fontSize" (change)="onChange($event.target.value)">
+  </table>
+</div>
+<p class="output" [style.fontSize.px]="fontSize">Kho qua do nha !</p>
