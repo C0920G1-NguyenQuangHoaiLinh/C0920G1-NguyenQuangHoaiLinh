@@ -1,30 +1,41 @@
 package vn.codegym.model;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class CustomerType {
-    private String customer_type_id;
-    private String customer_type_name;
+    @Id
+    private Integer id;
+    private String customerTypeName;
+
+    @OneToMany(mappedBy = "customerType")
+    private List<Customer> customerList;
 
     public CustomerType() {
     }
 
-    public CustomerType(String customer_type_id, String customer_type_name) {
-        this.customer_type_id = customer_type_id;
-        this.customer_type_name = customer_type_name;
+    public Integer getId() {
+        return id;
     }
 
-    public String getCustomer_type_id() {
-        return customer_type_id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setCustomer_type_id(String customer_type_id) {
-        this.customer_type_id = customer_type_id;
+    public String getCustomerTypeName() {
+        return customerTypeName;
     }
 
-    public String getCustomer_type_name() {
-        return customer_type_name;
+    public void setCustomerTypeName(String customerTypeName) {
+        this.customerTypeName = customerTypeName;
     }
 
-    public void setCustomer_type_name(String customer_type_name) {
-        this.customer_type_name = customer_type_name;
+    public List<Customer> getCustomerList() {
+        return customerList;
+    }
+
+    public void setCustomerList(List<Customer> customerList) {
+        this.customerList = customerList;
     }
 }

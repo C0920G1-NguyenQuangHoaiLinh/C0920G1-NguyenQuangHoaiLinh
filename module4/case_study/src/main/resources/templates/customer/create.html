@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
+</head>
+<body>
+<fieldset style="margin-right: 50%">
+    <legend>Create Customer Form</legend>
+    <form action="/customer/create" method="post" th:object="${customer}">
+        <table class="table table-striped">
+            <tr>
+                <td>ID</td>
+                <td type="text" th:field="*{id}"><input type="text" th:field="*{id}"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" th:field="*{customerName}"></td>
+            </tr>
+            <tr>
+                <td>Birthday</td>
+                <td><input type="text" th:field="*{customerBirth}"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="text" th:field="*{customerGender}"></td>
+            </tr>
+            <tr>
+                <td>IdCard</td>
+                <td><input type="text" th:field="*{customerIdCard}"></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input type="text" th:field="*{customerPhone}"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" th:field="*{customerEmail}"></td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td><input type="text" th:field="*{customerType}"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" th:field="*{customerAddress}"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Create">
+    </form>
+</fieldset>
+</body>
+</html>
