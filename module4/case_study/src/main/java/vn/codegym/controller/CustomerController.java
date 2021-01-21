@@ -1,6 +1,7 @@
 package vn.codegym.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -21,8 +22,26 @@ public class CustomerController {
     CustomerService customerService;
 
     @GetMapping(value = {"","/list"})
-    public ModelAndView customerList(@PageableDefault(value = 5)Pageable pageable){
-        return new ModelAndView("/customer/list","customerList",customerService.findCustomer(pageable));
+    public ModelAndView customerList(@PageableDefault(value = 5)Pageable pageable,
+                                     @RequestParam(value = "name", defaultValue = "") String name,
+                                     @RequestParam(value = "email", defaultValue = "") String email) {
+        Page<Customer> customers = null;
+        if (name.equals("") && email.equals("")){
+            customers = customerService.findCustomer(pageable);
+        }else if (!name.equals("") && email.equals("")){
+            customers = customerService.findName(name, pageable);
+        }else if (name.equals("") && !email.equals("")){
+            customers = customerService.findEmail(email, pageable);
+        }else if (!name.equals("") && !email.equals("")){
+            customers = customerService.findNameAndEmail(name, email, pageable);
+        }
+
+        ModelAndView modelAndView = new ModelAndView("customer/list");
+        modelAndView.addObject("customers",customers);
+        modelAndView.addObject("name", name);
+        modelAndView.addObject("email", email);
+//        return new ModelAndView("/customer/list","customerList",customerService.findCustomer(pageable));
+        return modelAndView;
     }
 
     @GetMapping(value = "/create")
@@ -48,6 +67,24 @@ public class CustomerController {
     public String editCustomer(@ModelAttribute("customer") Customer customer, RedirectAttributes redirectAttributes){
         customerService.updateCustomer(customer);
         redirectAttributes.addFlashAttribute("successMsg","Edit customer success !");
+        return "redirect:/customer";
+    }
+
+    @GetMapping(value = "/delete/{id}")
+    public String showDeleteForm(@PathVariable Integer id, Model model){
+        Customer customer = customerService.findById(id);
+        model.addAttribute("customer", customer);
+        if (customer !=null){
+            return "/customer/delete";
+        }else {
+            return "/error.404";
+        }
+    }
+
+    @PostMapping(value = "/delete")
+    public String deleteCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes){
+        customerService.deleteCustomer(customer.getId());
+        redirectAttributes.addFlashAttribute("successMsg","Delete customer success !");
         return "redirect:/customer";
     }
 

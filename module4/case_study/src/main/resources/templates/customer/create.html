@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="~{/customer/layout::head}">
     <meta charset="UTF-8">
     <title>Create Customer</title>
 </head>
 <body>
+<header th:replace="~{/customer/layout::header}"></header>
+<nav th:replace="~{/customer/layout::nav}"></nav>
 <fieldset style="margin-right: 50%">
     <legend>Create Customer Form</legend>
     <form action="/customer/create" method="post" th:object="${customer}">
@@ -49,5 +51,6 @@
         <input type="submit" value="Create">
     </form>
 </fieldset>
+<footer th:replace="~{/customer/layout::footer}"></footer>
 </body>
 </html>
