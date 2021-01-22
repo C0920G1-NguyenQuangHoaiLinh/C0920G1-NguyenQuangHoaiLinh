@@ -52,5 +52,4 @@ public class CustomerServiceImpl implements CustomerService{
         return this.customerRepository.findByCustomerNameContainingAndCustomerEmailContaining(name, email, pageable);
     }
 
-
 }
