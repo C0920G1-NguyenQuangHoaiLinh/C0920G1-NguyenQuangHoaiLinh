@@ -29,7 +29,7 @@ public class BlogController {
     }
 
     @GetMapping("/blog-category")
-    public String blogOfCategory(Model model,@RequestParam String id){
+    public String blogOfCategory(Model model,@RequestParam Integer id){
         model.addAttribute("blogList",blogService.findAllBlogOfCategory(id));
         return "blog/blog-category";
     }
@@ -53,13 +53,13 @@ public class BlogController {
     }
 
     @GetMapping("/detail")
-    public String viewBlog(@RequestParam String id, Model model) {
+    public String viewBlog(@RequestParam Integer id, Model model) {
         model.addAttribute("blog", blogService.findById(id));
         return "blog/detail";
     }
 
     @GetMapping("/update")
-    public String showUpdate(@RequestParam String id, Model model,Pageable pageable) {
+    public String showUpdate(@RequestParam Integer id, Model model,Pageable pageable) {
         model.addAttribute("blog", blogService.findById(id));
         model.addAttribute("categoryList",categoryService.findAll(pageable));
         return "blog/edit";
@@ -73,13 +73,13 @@ public class BlogController {
     }
 
     @GetMapping("/delete")
-    public String showDelete(@RequestParam String id, Model model) {
+    public String showDelete(@RequestParam Integer id, Model model) {
         model.addAttribute("blog", blogService.findById(id));
         return "blog/delete";
     }
 
     @PostMapping("/delete")
-    public String deleteBlog(@RequestParam String id, RedirectAttributes redirectAttributes) {
+    public String deleteBlog(@RequestParam Integer id, RedirectAttributes redirectAttributes) {
         this.blogService.delete(id);
         redirectAttributes.addFlashAttribute("message", "Delete Complete !");
         return "redirect:/";

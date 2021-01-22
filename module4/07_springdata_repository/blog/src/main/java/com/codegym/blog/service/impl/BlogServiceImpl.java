@@ -22,16 +22,16 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Blog findById(String id) {
-        return this.blogRepository.findById(id).orElse(null);
+    public Blog findById(Integer id) {
+        return blogRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<Blog> findAllBlogOfCategory(String categoryId) {
+    public List<Blog> findAllBlogOfCategory(Integer categoryId) {
         List<Blog> blogOfCategory = new ArrayList<>();
         List<Blog> blogList = blogRepository.findAll();
         for (Blog blog : blogList){
-            if (blog.getCategory().getId().equals(categoryId)){
+            if (blog.getCategory().getId() == categoryId){
                 blogOfCategory.add(blog);
             }
         }
@@ -49,7 +49,8 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public void delete(String id) {
-        this.blogRepository.deleteById(id);
+    public void delete(Integer id) {
+        blogRepository.deleteById(id);
     }
+
 }

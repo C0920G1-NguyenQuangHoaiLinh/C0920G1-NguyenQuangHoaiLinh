@@ -8,12 +8,12 @@ import org.springframework.data.domain.Pageable;
 public interface CategoryService {
     Page<Category> findAll(Pageable pageable);
 
-    Category findById(String id);
+    Category findById(Integer id);
 
     void save(Category category);
 
     void edit(Category category);
 
-    void delete(String id);
+    void delete(Integer categoryId);
 
 }

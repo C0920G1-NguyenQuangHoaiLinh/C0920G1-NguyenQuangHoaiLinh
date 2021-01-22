@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Blog {
 
     @Id
-    private String id;
+    private int id;
 
     @Column(name = "blog_name")
     private String name;
@@ -14,7 +14,7 @@ public class Blog {
     @Column(name = "date_created")
     private String dateCreated;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id",referencedColumnName = "id")
     private Category category;
 
@@ -23,11 +23,11 @@ public class Blog {
     public Blog() {
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

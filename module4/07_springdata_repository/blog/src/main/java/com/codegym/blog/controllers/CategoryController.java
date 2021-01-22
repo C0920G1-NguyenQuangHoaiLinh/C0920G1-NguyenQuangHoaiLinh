@@ -40,7 +40,7 @@ public class CategoryController {
     }
 
     @GetMapping("/update")
-    public String showEditCategory(@RequestParam String id, Model model){
+    public String showEditCategory(@RequestParam Integer id, Model model){
         model.addAttribute("category",categoryService.findById(id));
         return "category/edit";
     }
@@ -53,14 +53,14 @@ public class CategoryController {
     }
 
     @GetMapping("/delete")
-    public String showDeleteCategory(@RequestParam String id, Model model){
+    public String showDeleteCategory(@RequestParam Integer id, Model model){
         model.addAttribute("category",categoryService.findById(id));
         return "category/delete";
     }
 
     @PostMapping("/delete")
-    public String deleteCategory(@ModelAttribute String id,RedirectAttributes redirectAttributes){
-        categoryService.delete(id);
+    public String deleteCategory(@ModelAttribute Category category,RedirectAttributes redirectAttributes){
+        categoryService.delete(category.getId());
         redirectAttributes.addFlashAttribute("category","delete category success !");
         return "redirect:/category";
     }

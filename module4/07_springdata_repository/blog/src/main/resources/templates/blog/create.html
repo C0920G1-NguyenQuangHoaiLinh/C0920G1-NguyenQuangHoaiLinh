@@ -27,7 +27,7 @@
         <textarea th:field="*{content}"></textarea>
     </label>
     <label>Category :
-        <select th:field="*{category}">
+        <select th:field="*{category.id}">
             <option th:each="category : ${categoryList}"
                     th:value="${category.id}" th:text="${category.name}"></option>
         </select>

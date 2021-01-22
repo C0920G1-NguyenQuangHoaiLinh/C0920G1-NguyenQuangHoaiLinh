@@ -9,13 +9,13 @@ import java.util.List;
 public interface BlogService {
     Page<Blog> findAll(Pageable pageable);
 
-    Blog findById(String id);
+    Blog findById(Integer id);
 
-    List<Blog> findAllBlogOfCategory(String categoryId);
+    List<Blog> findAllBlogOfCategory(Integer categoryId);
 
     void save(Blog blog);
 
     void edit(Blog blog);
 
-    void delete(String id);
+    void delete(Integer id);
 }
