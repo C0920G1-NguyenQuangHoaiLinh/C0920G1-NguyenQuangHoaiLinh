@@ -3,6 +3,8 @@ package com.codegym.controller;
 import com.codegym.entity.Product;
 import com.codegym.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,20 +15,20 @@ import java.util.List;
 
 @Controller
 @RequestMapping({"", "/product"})
-@SessionAttributes(value = "thiMai")
+@SessionAttributes(value = "cart")
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
-    @ModelAttribute("thiMai")
-    public List<Product> productListNew() {
-        return new ArrayList<>();
-    }
+//    @ModelAttribute("cart")
+//    public List<Product> productListNew() {
+//        return new ArrayList<>();
+//    }
 
     @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute("products", this.productService.findAll());
+    public String home(Model model, RedirectAttributes redirectAttributes, @PageableDefault(value = 5) Pageable pageable) {
+        model.addAttribute("products", this.productService.findAll(pageable));
         return "home";
     }
 

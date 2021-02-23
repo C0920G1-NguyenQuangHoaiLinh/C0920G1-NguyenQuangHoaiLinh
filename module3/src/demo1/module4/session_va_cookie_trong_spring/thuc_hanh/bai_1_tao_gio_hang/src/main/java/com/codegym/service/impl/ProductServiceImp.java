@@ -4,6 +4,8 @@ import com.codegym.entity.Product;
 import com.codegym.repository.ProductRepository;
 import com.codegym.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +18,8 @@ public class ProductServiceImp implements ProductService {
 
 
     @Override
-    public List<Product> findAll() {
-        return this.productRepository.findAll();
+    public Page<Product> findAll(Pageable pageable) {
+        return this.productRepository.findAll(pageable);
     }
 
     @Override

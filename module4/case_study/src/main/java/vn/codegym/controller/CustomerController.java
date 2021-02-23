@@ -3,15 +3,15 @@ package vn.codegym.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import vn.codegym.model.Customer;
-import vn.codegym.model.CustomerType;
 import vn.codegym.service.CustomerService;
 
 @Controller
@@ -52,13 +52,18 @@ public class CustomerController {
     }
 
     @PostMapping(value = "/create")
-    public String createCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes){
-        customerService.saveCustomer(customer);
-        redirectAttributes.addFlashAttribute("successMsg","Create customer " + customer.getCustomerName()+" success !");
-        return "redirect:/customer";
+    public String createCustomer(@Validated @ModelAttribute Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+        if (bindingResult.hasErrors()){
+            return "customer/create";
+        }else {
+            customerService.saveCustomer(customer);
+            redirectAttributes.addFlashAttribute("successMsg","Create customer " + customer.getCustomerName()+" success !");
+            return "redirect:/customer";
+        }
+
     }
     @GetMapping(value = "/edit/{id}")
-    public String showEditForm(@PathVariable Integer id, Model model){
+    public String showEditForm(@PathVariable String id, Model model){
         model.addAttribute("customer",customerService.findById(id));
             return "/customer/edit";
     }
@@ -71,7 +76,7 @@ public class CustomerController {
     }
 
     @GetMapping(value = "/delete/{id}")
-    public String showDeleteForm(@PathVariable Integer id, Model model){
+    public String showDeleteForm(@PathVariable String id, Model model){
         Customer customer = customerService.findById(id);
         model.addAttribute("customer", customer);
         if (customer !=null){
@@ -83,7 +88,7 @@ public class CustomerController {
 
     @PostMapping(value = "/delete")
     public String deleteCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes){
-        customerService.deleteCustomer(customer.getId());
+        customerService.deleteByCustomer(customer);
         redirectAttributes.addFlashAttribute("successMsg","Delete customer success !");
         return "redirect:/customer";
     }

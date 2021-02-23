@@ -3,6 +3,11 @@
 <head th:replace="~{/customer/layout::head}">
     <meta charset="UTF-8">
     <title>Create Customer</title>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <header th:replace="~{/customer/layout::header}"></header>
@@ -13,35 +18,48 @@
         <table class="table table-striped">
             <tr>
                 <td>ID</td>
-                <td type="text" th:field="*{id}"><input type="text" th:field="*{id}"></td>
+                <td><input type="text" th:field="*{id}">
+                    <p style="color: red" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></p></td>
             </tr>
             <tr>
                 <td>Name</td>
-                <td><input type="text" th:field="*{customerName}"></td>
+                <td><input type="text" th:field="*{customerName}">
+                    <p style="color: red" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></p></td>
             </tr>
             <tr>
                 <td>Birthday</td>
-                <td><input type="text" th:field="*{customerBirth}"></td>
+                <td><input type="date" th:field="*{customerBirth}">
+                    <p style="color: red" th:if="${#fields.hasErrors('customerBirth')}" th:errors="*{customerBirth}"></p></td>
             </tr>
             <tr>
                 <td>Gender</td>
-                <td><input type="text" th:field="*{customerGender}"></td>
+                <td><input type="radio" value="Male" th:field="*{customerGender}">Male
+                    <input type="radio" value="Female" th:field="*{customerGender}">Female
+                    <input type="radio" value="Other" th:field="*{customerGender}">Other</td>
             </tr>
             <tr>
                 <td>IdCard</td>
-                <td><input type="text" th:field="*{customerIdCard}"></td>
+                <td><input type="text" th:field="*{customerIdCard}">
+                    <p style="color: red" th:if="${#fields.hasErrors('customerIdCard')}" th:errors="*{customerIdCard}"></p></td>
             </tr>
             <tr>
                 <td>Phone</td>
-                <td><input type="text" th:field="*{customerPhone}"></td>
+                <td><input type="text" th:field="*{customerPhone}">
+                    <p style="color: red" th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{customerPhone}"></p></td>
             </tr>
             <tr>
                 <td>Email</td>
-                <td><input type="text" th:field="*{customerEmail}"></td>
+                <td><input type="text" th:field="*{customerEmail}">
+                    <p style="color: red" th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}"></td>
             </tr>
             <tr>
                 <td>Type</td>
-                <td><input type="text" th:field="*{customerType}"></td>
+                <td>
+                    <input type="radio" value="1" th:field="*{customerType}">Diamond
+                    <input type="radio" value="2" th:field="*{customerType}">Platinum
+                    <input type="radio" value="3" th:field="*{customerType}">Gold
+                    <input type="radio" value="4" th:field="*{customerType}">Member
+                </td>
             </tr>
             <tr>
                 <td>Address</td>

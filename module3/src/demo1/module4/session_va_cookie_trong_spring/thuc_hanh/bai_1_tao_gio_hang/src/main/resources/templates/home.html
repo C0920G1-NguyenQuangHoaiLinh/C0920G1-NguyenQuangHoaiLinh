@@ -184,9 +184,12 @@
                 </tr>
                 </tbody>
             </table>
-            <div class="clearfix">
+            <a th:if="${products.hasPrevious()}" th:href="@{/(page= ${products.number -1})}">Previous</a>
+            <span th:text="${products.number +1}"></span>/<span th:text="${products.totalPages}"></span>
+            <a th:if="${products.hasNext()}" th:href="@{/(page= ${products.number +1})}">Next</a>
+<!--            <div class="clearfix">-->
 <!--                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>-->
-                <ul class="pagination">
+<!--                <ul class="pagination">-->
 <!--                    <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>-->
 <!--                    <li class="page-item"><a href="#" class="page-link">1</a></li>-->
 <!--                    <li class="page-item"><a href="#" class="page-link">2</a></li>-->
@@ -194,8 +197,8 @@
 <!--                    <li class="page-item"><a href="#" class="page-link">4</a></li>-->
 <!--                    <li class="page-item"><a href="#" class="page-link">5</a></li>-->
 <!--                    <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>-->
-                </ul>
-            </div>
+<!--                </ul>-->
+<!--            </div>-->
         </div>
     </div>
 </div>

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import vn.codegym.model.Customer;
 import vn.codegym.repository.CustomerRepository;
 
-import java.util.List;
 @Service
 public class CustomerServiceImpl implements CustomerService{
     @Autowired
@@ -18,8 +17,8 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public Customer findById(Integer id) {
-        return customerRepository.findById(id).orElse(null);
+    public Customer findById(String id) {
+        return customerRepository.findById(id);
     }
 
     @Override
@@ -33,8 +32,18 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public void deleteCustomer(int id) {
+    public void deleteCustomer(String id) {
         customerRepository.deleteById(id);
+    }
+
+    @Override
+    public void deleteByName(String name) {
+        customerRepository.deleteByCustomerName(name);
+    }
+
+    @Override
+    public void deleteByCustomer(Customer customer) {
+        customerRepository.delete(customer);
     }
 
     @Override

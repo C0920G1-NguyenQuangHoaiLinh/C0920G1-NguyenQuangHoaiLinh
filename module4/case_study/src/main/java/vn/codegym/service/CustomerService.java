@@ -9,17 +9,22 @@ import java.util.List;
 public interface CustomerService {
     Page<Customer> findCustomer(Pageable pageable);
 
-    Customer findById(Integer id);
+    Customer findById(String id);
 
     void saveCustomer(Customer customer);
 
     void updateCustomer(Customer customer);
 
-    void deleteCustomer(int id);
+    void deleteCustomer(String id);
+
+    void deleteByName(String name);
+
+    void deleteByCustomer(Customer customer);
 
     Page<Customer> findName(String name,Pageable pageable);
 
     Page<Customer> findEmail(String email,Pageable pageable);
 
     Page<Customer> findNameAndEmail(String name, String email,Pageable pageable);
+
 }
